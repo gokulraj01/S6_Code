@@ -1,0 +1,1469 @@
+$ ifconfig
+$ ifconfig -a
+enp2s0    Link encap:Ethernet  HWaddr 40:8d:5c:ac:f8:94  
+          inet addr:10.0.4.37  Bcast:10.255.255.255  Mask:255.0.0.0
+          inet6 addr: 2405:201:f009:148:8fd4:80f1:cea3:3964/64 Scope:Global
+          inet6 addr: fe80::808f:c18e:54fb:e648/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:82712 errors:0 dropped:122 overruns:0 frame:0
+          TX packets:5155 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:21626905 (21.6 MB)  TX bytes:2326293 (2.3 MB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:922 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:922 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:73650 (73.6 KB)  TX bytes:73650 (73.6 KB)
+
+
+$ ifconfig -s
+Iface   MTU Met   RX-OK RX-ERR RX-DRP RX-OVR    TX-OK TX-ERR TX-DRP TX-OVR Flg
+enp2s0     1500 0    103800      0    152 0          5527      0      0      0 BMRU
+lo        65536 0      1058      0      0 0          1058      0      0      0 LRU
+
+
+$ netstat
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.5:51254          ESTABLISHED
+tcp        0      0 10.0.4.37:microsoft-ds  10.0.4.19:60680         ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.46.21:44118        ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.17:34422         ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.17:34424         ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.21:49738         ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.14:47724         ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.38:57006         ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.11:58700         ESTABLISHED
+tcp       12      0 localhost:49190         sct-H81M-S:netbios-ssn  ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.16:49484         ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.6:53402          ESTABLISHED
+tcp       12      0 10.0.4.37:52552         10.0.4.36:netbios-ssn   ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.4:42982          ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.12:39136         ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.26:38796         ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.26:38770         ESTABLISHED
+tcp       12      0 localhost:49180         sct-H81M-S:netbios-ssn  ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.18:40782         ESTABLISHED
+tcp        0      0 sct-H81M-S:netbios-ssn  localhost:49190         ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.19:60398         ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.9:45342          ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.20:50582         ESTABLISHED
+tcp        0     12 10.0.4.37:netbios-ssn   10.0.40.35:33116        ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.8:60232          ESTABLISHED
+tcp        0      0 sct-H81M-S:netbios-ssn  localhost:49180         ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.14:47750         ESTABLISHED
+Active UNIX domain sockets (w/o servers)
+Proto RefCnt Flags       Type       State         I-Node   Path
+unix  2      [ ]         DGRAM                    31186    /run/user/1001/systemd/notify
+unix  2      [ ]         DGRAM                    33233    /var/lib/samba/private/msg.sock/3502
+unix  2      [ ]         DGRAM                    22261    /var/lib/samba/private/msg.sock/1210
+unix  2      [ ]         DGRAM                    36947    /var/lib/samba/private/msg.sock/4070
+unix  2      [ ]         DGRAM                    23265    /var/lib/samba/private/msg.sock/1226
+unix  2      [ ]         DGRAM                    23945    /var/lib/samba/private/msg.sock/1227
+unix  2      [ ]         DGRAM                    23278    /var/lib/samba/private/msg.sock/1231
+unix  2      [ ]         DGRAM                    33445    /var/lib/samba/private/msg.sock/3761
+unix  2      [ ]         DGRAM                    14845    /run/systemd/cgroups-agent
+unix  2      [ ]         DGRAM                    14850    /run/systemd/journal/syslog
+unix  14     [ ]         DGRAM                    14860    /run/systemd/journal/dev-log
+unix  7      [ ]         DGRAM                    14863    /run/systemd/journal/socket
+unix  2      [ ]         DGRAM                    32401    /var/lib/samba/private/msg.sock/3704
+unix  2      [ ]         DGRAM                    34717    /var/lib/samba/private/msg.sock/3762
+unix  2      [ ]         DGRAM                    34726    /var/lib/samba/private/msg.sock/3766
+unix  2      [ ]         DGRAM                    35974    /var/lib/samba/private/msg.sock/3948
+unix  2      [ ]         DGRAM                    32699    /var/lib/samba/private/msg.sock/4083
+unix  2      [ ]         DGRAM                    36193    /var/lib/samba/private/msg.sock/4165
+unix  2      [ ]         DGRAM                    37969    /var/lib/samba/private/msg.sock/4166
+unix  2      [ ]         DGRAM                    36999    /var/lib/samba/private/msg.sock/4112
+unix  2      [ ]         DGRAM                    34710    /var/lib/samba/private/msg.sock/3757
+unix  2      [ ]         DGRAM                    36195    /var/lib/samba/private/msg.sock/4169
+unix  2      [ ]         DGRAM                    37975    /var/lib/samba/private/msg.sock/4184
+unix  2      [ ]         DGRAM                    36224    /var/lib/samba/private/msg.sock/4185
+unix  2      [ ]         DGRAM                    37980    /var/lib/samba/private/msg.sock/4186
+unix  2      [ ]         DGRAM                    38965    /var/lib/samba/private/msg.sock/4250
+unix  2      [ ]         DGRAM                    38119    /var/lib/samba/private/msg.sock/4339
+unix  2      [ ]         DGRAM                    38080    /var/lib/samba/private/msg.sock/4292
+unix  2      [ ]         DGRAM                    37208    /var/lib/samba/private/msg.sock/4301
+unix  2      [ ]         DGRAM                    37243    /var/lib/samba/private/msg.sock/4309
+unix  2      [ ]         DGRAM                    33440    /var/lib/samba/private/msg.sock/3758
+unix  2      [ ]         DGRAM                    35326    /var/lib/samba/private/msg.sock/3703
+unix  2      [ ]         DGRAM                    34729    /var/lib/samba/private/msg.sock/3806
+unix  3      [ ]         DGRAM                    14844    /run/systemd/notify
+unix  3      [ ]         STREAM     CONNECTED     29502    
+unix  3      [ ]         STREAM     CONNECTED     32855    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     29671    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     38171    @cs1-com.canonical.Unity.Scope.rhythmbox.T8139879796049
+unix  2      [ ]         DGRAM                    31911    
+unix  3      [ ]         STREAM     CONNECTED     31870    
+unix  3      [ ]         STREAM     CONNECTED     29588    
+unix  3      [ ]         STREAM     CONNECTED     32305    @/dbus-vfs-daemon/socket-4aqkDAsG
+unix  3      [ ]         STREAM     CONNECTED     32538    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     30486    
+unix  3      [ ]         STREAM     CONNECTED     31352    
+unix  3      [ ]         STREAM     CONNECTED     31942    @/tmp/dbus-6xOxarLjWb
+unix  3      [ ]         STREAM     CONNECTED     31171    
+unix  3      [ ]         STREAM     CONNECTED     31302    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     25843    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     23773    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     35190    
+unix  3      [ ]         STREAM     CONNECTED     31254    
+unix  3      [ ]         STREAM     CONNECTED     30546    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     31349    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     28227    
+unix  3      [ ]         STREAM     CONNECTED     32854    
+unix  2      [ ]         DGRAM                    31177    
+unix  3      [ ]         STREAM     CONNECTED     38168    @cs1-com.canonical.Unity.Master.Scope.music.T8139211152663
+unix  3      [ ]         STREAM     CONNECTED     31540    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     30401    @/tmp/dbus-9urqEDoY0v
+unix  2      [ ]         DGRAM                    25219    
+unix  3      [ ]         STREAM     CONNECTED     30382    
+unix  3      [ ]         STREAM     CONNECTED     31229    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     30321    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     31890    
+unix  3      [ ]         STREAM     CONNECTED     31871    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     31284    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     34533    @/dbus-vfs-daemon/socket-XDONIfsr
+unix  3      [ ]         STREAM     CONNECTED     30445    
+unix  3      [ ]         STREAM     CONNECTED     28224    
+unix  3      [ ]         DGRAM                    22044    
+unix  3      [ ]         STREAM     CONNECTED     32847    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     29672    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     31272    
+unix  3      [ ]         STREAM     CONNECTED     32290    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     31500    
+unix  3      [ ]         STREAM     CONNECTED     27359    
+unix  3      [ ]         STREAM     CONNECTED     35313    
+unix  3      [ ]         STREAM     CONNECTED     30446    
+unix  3      [ ]         STREAM     CONNECTED     38275    @/dbus-vfs-daemon/socket-owrWrY7v
+unix  3      [ ]         STREAM     CONNECTED     35192    
+unix  3      [ ]         STREAM     CONNECTED     871      
+unix  3      [ ]         STREAM     CONNECTED     35912    
+unix  3      [ ]         STREAM     CONNECTED     33834    @/dbus-vfs-daemon/socket-1CBmlzWZ
+unix  3      [ ]         STREAM     CONNECTED     31578    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     31912    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     33361    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     36791    
+unix  3      [ ]         STREAM     CONNECTED     29589    @/tmp/ibus/dbus-57m8tsJC
+unix  3      [ ]         STREAM     CONNECTED     28236    
+unix  3      [ ]         STREAM     CONNECTED     35161    
+unix  3      [ ]         STREAM     CONNECTED     32537    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     31348    
+unix  3      [ ]         STREAM     CONNECTED     28252    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         DGRAM                    22043    
+unix  3      [ ]         STREAM     CONNECTED     31281    
+unix  3      [ ]         STREAM     CONNECTED     29451    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     35317    
+unix  3      [ ]         STREAM     CONNECTED     30377    
+unix  3      [ ]         STREAM     CONNECTED     28164    
+unix  3      [ ]         STREAM     CONNECTED     27196    
+unix  3      [ ]         STREAM     CONNECTED     32849    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     30447    
+unix  3      [ ]         STREAM     CONNECTED     31883    
+unix  3      [ ]         STREAM     CONNECTED     33240    @/dbus-vfs-daemon/socket-BJvPAx4D
+unix  3      [ ]         STREAM     CONNECTED     30378    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     29531    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     26762    
+unix  3      [ ]         STREAM     CONNECTED     33829    
+unix  3      [ ]         STREAM     CONNECTED     30454    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     15079    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     31484    /run/user/1001/pulse/native
+unix  3      [ ]         STREAM     CONNECTED     28321    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     32848    
+unix  3      [ ]         STREAM     CONNECTED     29569    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     35191    
+unix  3      [ ]         STREAM     CONNECTED     30451    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     29577    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     30386    @/com/ubuntu/upstart-session/1001/2636
+unix  3      [ ]         STREAM     CONNECTED     32846    
+unix  2      [ ]         DGRAM                    31180    
+unix  3      [ ]         STREAM     CONNECTED     37387    
+unix  3      [ ]         STREAM     CONNECTED     30559    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     33830    @/tmp/ibus/dbus-57m8tsJC
+unix  3      [ ]         STREAM     CONNECTED     31375    
+unix  3      [ ]         STREAM     CONNECTED     28280    
+unix  3      [ ]         STREAM     CONNECTED     29393    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     34641    @/tmp/ibus/dbus-57m8tsJC
+unix  3      [ ]         STREAM     CONNECTED     33795    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     31273    
+unix  3      [ ]         STREAM     CONNECTED     33363    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     32296    
+unix  3      [ ]         STREAM     CONNECTED     31350    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     31581    
+unix  3      [ ]         STREAM     CONNECTED     31374    
+unix  3      [ ]         STREAM     CONNECTED     17139    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     33288    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     25220    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     33365    
+unix  3      [ ]         STREAM     CONNECTED     37393    
+unix  3      [ ]         STREAM     CONNECTED     28615    @/tmp/.ICE-unix/2857
+unix  3      [ ]         STREAM     CONNECTED     29586    
+unix  3      [ ]         STREAM     CONNECTED     35156    
+unix  3      [ ]         STREAM     CONNECTED     31747    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     31347    
+unix  3      [ ]         STREAM     CONNECTED     28225    
+unix  3      [ ]         STREAM     CONNECTED     32853    
+unix  3      [ ]         STREAM     CONNECTED     30448    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     28388    
+unix  3      [ ]         STREAM     CONNECTED     29565    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     31200    
+unix  3      [ ]         STREAM     CONNECTED     33252    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     30634    
+unix  2      [ ]         DGRAM                    19137    
+unix  3      [ ]         DGRAM                    16872    
+unix  3      [ ]         STREAM     CONNECTED     32850    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     29482    
+unix  3      [ ]         STREAM     CONNECTED     17142    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     32651    
+unix  3      [ ]         STREAM     CONNECTED     33359    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     24888    
+unix  3      [ ]         STREAM     CONNECTED     18418    
+unix  3      [ ]         STREAM     CONNECTED     35931    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     30502    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     33800    
+unix  3      [ ]         STREAM     CONNECTED     31576    
+unix  3      [ ]         STREAM     CONNECTED     31750    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     33596    
+unix  3      [ ]         STREAM     CONNECTED     31599    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     31234    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     20654    
+unix  3      [ ]         STREAM     CONNECTED     33250    
+unix  3      [ ]         STREAM     CONNECTED     25043    /var/run/dbus/system_bus_socket
+unix  2      [ ]         DGRAM                    18424    
+unix  3      [ ]         STREAM     CONNECTED     19307    
+unix  3      [ ]         STREAM     CONNECTED     30631    
+unix  3      [ ]         STREAM     CONNECTED     31453    
+unix  3      [ ]         STREAM     CONNECTED     30472    
+unix  2      [ ]         DGRAM                    16865    
+unix  3      [ ]         STREAM     CONNECTED     33822    
+unix  3      [ ]         STREAM     CONNECTED     31841    
+unix  3      [ ]         STREAM     CONNECTED     29664    
+unix  3      [ ]         STREAM     CONNECTED     28244    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     30362    
+unix  3      [ ]         STREAM     CONNECTED     26851    
+unix  3      [ ]         STREAM     CONNECTED     32656    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     29667    
+unix  3      [ ]         STREAM     CONNECTED     30500    
+unix  3      [ ]         STREAM     CONNECTED     32385    
+unix  3      [ ]         STREAM     CONNECTED     28248    
+unix  3      [ ]         STREAM     CONNECTED     23020    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     32791    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     31591    
+unix  3      [ ]         STREAM     CONNECTED     31564    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     20682    
+unix  3      [ ]         STREAM     CONNECTED     30684    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     34638    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     28671    
+unix  3      [ ]         STREAM     CONNECTED     30479    @/tmp/dbus-6xOxarLjWb
+unix  3      [ ]         STREAM     CONNECTED     36916    @cs1-com.canonical.Unity.Scope.scopes.T3977685302147
+unix  3      [ ]         STREAM     CONNECTED     31548    @/tmp/dbus-6xOxarLjWb
+unix  3      [ ]         STREAM     CONNECTED     37528    
+unix  3      [ ]         STREAM     CONNECTED     26186    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     18277    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     31598    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     31547    
+unix  3      [ ]         STREAM     CONNECTED     30941    
+unix  3      [ ]         STREAM     CONNECTED     31917    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     30636    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     29668    @/tmp/dbus-6xOxarLjWb
+unix  3      [ ]         STREAM     CONNECTED     32542    
+unix  2      [ ]         DGRAM                    17289    
+unix  3      [ ]         DGRAM                    16869    
+unix  3      [ ]         STREAM     CONNECTED     35927    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     33820    
+unix  3      [ ]         STREAM     CONNECTED     31842    
+unix  3      [ ]         STREAM     CONNECTED     31239    @/com/ubuntu/upstart-session/1001/2636
+unix  3      [ ]         STREAM     CONNECTED     35620    @cs1-com.canonical.Unity.Master.Scope.applications.T3974166673550
+unix  3      [ ]         STREAM     CONNECTED     31874    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     30440    
+unix  3      [ ]         STREAM     CONNECTED     31880    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     19113    
+unix  3      [ ]         STREAM     CONNECTED     32657    
+unix  3      [ ]         STREAM     CONNECTED     33804    @/tmp/dbus-6xOxarLjWb
+unix  3      [ ]         STREAM     CONNECTED     35638    
+unix  3      [ ]         STREAM     CONNECTED     32382    
+unix  3      [ ]         STREAM     CONNECTED     29496    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     23890    
+unix  3      [ ]         STREAM     CONNECTED     33794    /run/systemd/journal/stdout
+unix  2      [ ]         DGRAM                    24896    
+unix  3      [ ]         STREAM     CONNECTED     18335    
+unix  3      [ ]         STREAM     CONNECTED     28459    /run/user/1001/pulse/native
+unix  3      [ ]         STREAM     CONNECTED     30501    
+unix  3      [ ]         STREAM     CONNECTED     30459    
+unix  3      [ ]         STREAM     CONNECTED     36913    @cs1-com.canonical.Unity.Scope.files.T3974761311616
+unix  3      [ ]         STREAM     CONNECTED     33823    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     30683    
+unix  3      [ ]         STREAM     CONNECTED     29474    
+unix  3      [ ]         STREAM     CONNECTED     35160    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     28458    
+unix  3      [ ]         STREAM     CONNECTED     31395    @/tmp/dbus-6xOxarLjWb
+unix  3      [ ]         STREAM     CONNECTED     31549    
+unix  2      [ ]         DGRAM                    30563    
+unix  3      [ ]         STREAM     CONNECTED     29693    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     26182    
+unix  3      [ ]         STREAM     CONNECTED     35100    @/tmp/dbus-6xOxarLjWb
+unix  3      [ ]         STREAM     CONNECTED     28606    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     31466    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     29659    
+unix  3      [ ]         STREAM     CONNECTED     32384    
+unix  3      [ ]         STREAM     CONNECTED     31916    
+unix  3      [ ]         STREAM     CONNECTED     28672    
+unix  3      [ ]         STREAM     CONNECTED     31391    
+unix  3      [ ]         STREAM     CONNECTED     30633    /run/user/1001/pulse/native
+unix  3      [ ]         STREAM     CONNECTED     28439    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     17291    
+unix  3      [ ]         DGRAM                    16870    
+unix  3      [ ]         STREAM     CONNECTED     33803    
+unix  3      [ ]         STREAM     CONNECTED     30628    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     29205    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     36914    
+unix  3      [ ]         STREAM     CONNECTED     28249    
+unix  3      [ ]         STREAM     CONNECTED     28226    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     28665    
+unix  3      [ ]         STREAM     CONNECTED     28360    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     33805    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     28669    
+unix  3      [ ]         DGRAM                    16871    
+unix  3      [ ]         STREAM     CONNECTED     32860    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     30685    
+unix  3      [ ]         STREAM     CONNECTED     28320    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     31915    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     28243    
+unix  3      [ ]         STREAM     CONNECTED     30342    
+unix  3      [ ]         STREAM     CONNECTED     28666    
+unix  3      [ ]         STREAM     CONNECTED     28354    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     30693    
+unix  3      [ ]         STREAM     CONNECTED     22130    
+unix  3      [ ]         STREAM     CONNECTED     35099    
+unix  3      [ ]         STREAM     CONNECTED     20474    
+unix  3      [ ]         STREAM     CONNECTED     17140    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     35635    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     30441    
+unix  3      [ ]         STREAM     CONNECTED     31761    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     21743    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     33816    
+unix  2      [ ]         DGRAM                    29380    
+unix  3      [ ]         STREAM     CONNECTED     30940    
+unix  3      [ ]         STREAM     CONNECTED     19310    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     18153    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     33362    @/tmp/dbus-6xOxarLjWb
+unix  3      [ ]         STREAM     CONNECTED     31390    
+unix  3      [ ]         STREAM     CONNECTED     31212    @/com/ubuntu/upstart-session/1001/2636
+unix  3      [ ]         STREAM     CONNECTED     19309    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     17143    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     33798    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     31483    
+unix  3      [ ]         STREAM     CONNECTED     29694    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     28327    
+unix  3      [ ]         STREAM     CONNECTED     33817    
+unix  3      [ ]         STREAM     CONNECTED     29210    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     35643    @cs1-com.canonical.Unity.Scope.applications.T3977679072787
+unix  3      [ ]         STREAM     CONNECTED     31394    
+unix  3      [ ]         STREAM     CONNECTED     24889    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     21517    
+unix  3      [ ]         STREAM     CONNECTED     19308    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     32329    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     29656    
+unix  3      [ ]         STREAM     CONNECTED     28306    
+unix  3      [ ]         STREAM     CONNECTED     18208    
+unix  3      [ ]         STREAM     CONNECTED     23910    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     34526    @/tmp/dbus-9urqEDoY0v
+unix  2      [ ]         DGRAM                    1355     
+unix  3      [ ]         STREAM     CONNECTED     38217    
+unix  3      [ ]         STREAM     CONNECTED     35109    
+unix  3      [ ]         STREAM     CONNECTED     30457    
+unix  3      [ ]         STREAM     CONNECTED     20288    
+unix  3      [ ]         STREAM     CONNECTED     29609    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     18209    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     34242    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     31830    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     30424    
+unix  3      [ ]         STREAM     CONNECTED     34618    @/tmp/dbus-6xOxarLjWb
+unix  3      [ ]         STREAM     CONNECTED     34516    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     17292    
+unix  3      [ ]         STREAM     CONNECTED     32648    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     35168    @/dbus-vfs-daemon/socket-MIwOdZr4
+unix  3      [ ]         STREAM     CONNECTED     35108    
+unix  3      [ ]         STREAM     CONNECTED     28637    
+unix  3      [ ]         STREAM     CONNECTED     32467    
+unix  3      [ ]         STREAM     CONNECTED     29653    
+unix  3      [ ]         STREAM     CONNECTED     28310    
+unix  3      [ ]         STREAM     CONNECTED     31829    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     29676    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     21258    
+unix  2      [ ]         DGRAM                    34495    
+unix  3      [ ]         STREAM     CONNECTED     32118    @/tmp/.X11-unix/X0
+unix  3      [ ]         DGRAM                    15087    
+unix  3      [ ]         STREAM     CONNECTED     38213    
+unix  3      [ ]         STREAM     CONNECTED     20073    
+unix  3      [ ]         STREAM     CONNECTED     31587    
+unix  3      [ ]         STREAM     CONNECTED     29657    
+unix  3      [ ]         STREAM     CONNECTED     28355    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     29648    @/tmp/dbus-6xOxarLjWb
+unix  3      [ ]         STREAM     CONNECTED     33269    
+unix  3      [ ]         STREAM     CONNECTED     37678    
+unix  2      [ ]         STREAM     CONNECTED     33592    
+unix  3      [ ]         STREAM     CONNECTED     32256    
+unix  3      [ ]         STREAM     CONNECTED     31314    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     35628    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     29628    @/tmp/.X11-unix/X0
+unix  2      [ ]         DGRAM                    25206    
+unix  3      [ ]         STREAM     CONNECTED     33268    
+unix  3      [ ]         STREAM     CONNECTED     37389    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     30649    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     35210    
+unix  3      [ ]         STREAM     CONNECTED     28325    
+unix  3      [ ]         STREAM     CONNECTED     28371    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     30421    
+unix  3      [ ]         STREAM     CONNECTED     34615    
+unix  3      [ ]         STREAM     CONNECTED     38215    
+unix  3      [ ]         STREAM     CONNECTED     32652    
+unix  3      [ ]         STREAM     CONNECTED     18995    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     35211    
+unix  3      [ ]         STREAM     CONNECTED     39396    
+unix  3      [ ]         STREAM     CONNECTED     31425    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     28274    
+unix  3      [ ]         STREAM     CONNECTED     21261    
+unix  3      [ ]         STREAM     CONNECTED     35917    
+unix  3      [ ]         STREAM     CONNECTED     35263    
+unix  3      [ ]         STREAM     CONNECTED     34520    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     31566    @/tmp/dbus-6xOxarLjWb
+unix  3      [ ]         STREAM     CONNECTED     30426    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     28311    
+unix  3      [ ]         STREAM     CONNECTED     31499    
+unix  3      [ ]         STREAM     CONNECTED     31424    
+unix  3      [ ]         STREAM     CONNECTED     31401    
+unix  3      [ ]         STREAM     CONNECTED     35621    @cs1-com.canonical.Unity.Master.Scope.files.T3974172065954
+unix  3      [ ]         STREAM     CONNECTED     39503    @/dbus-vfs-daemon/socket-W5CthMcm
+unix  3      [ ]         STREAM     CONNECTED     32255    
+unix  3      [ ]         STREAM     CONNECTED     31496    
+unix  3      [ ]         STREAM     CONNECTED     31382    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     20396    
+unix  3      [ ]         STREAM     CONNECTED     28317    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     30425    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     28369    
+unix  3      [ ]         STREAM     CONNECTED     29678    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     31321    /run/systemd/journal/stdout
+unix  2      [ ]         STREAM     CONNECTED     33304    
+unix  3      [ ]         STREAM     CONNECTED     34518    
+unix  3      [ ]         STREAM     CONNECTED     35097    
+unix  2      [ ]         DGRAM                    15080    
+unix  3      [ ]         STREAM     CONNECTED     39399    
+unix  3      [ ]         STREAM     CONNECTED     34467    @/dbus-vfs-daemon/socket-BM7WAyTn
+unix  3      [ ]         STREAM     CONNECTED     32141    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     31495    
+unix  3      [ ]         STREAM     CONNECTED     33315    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     31567    
+unix  3      [ ]         STREAM     CONNECTED     37388    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     28670    @/tmp/dbus-6xOxarLjWb
+unix  3      [ ]         STREAM     CONNECTED     29551    @/tmp/.X11-unix/X0
+unix  3      [ ]         DGRAM                    15086    
+unix  3      [ ]         STREAM     CONNECTED     37392    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     34519    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     31565    
+unix  3      [ ]         STREAM     CONNECTED     31501    @/tmp/dbus-6xOxarLjWb
+unix  3      [ ]         STREAM     CONNECTED     29497    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     33314    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     29662    @/tmp/ibus/dbus-57m8tsJC
+unix  3      [ ]         STREAM     CONNECTED     31337    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     28367    
+unix  3      [ ]         STREAM     CONNECTED     29675    
+unix  3      [ ]         STREAM     CONNECTED     30427    
+unix  3      [ ]         STREAM     CONNECTED     32201    
+unix  3      [ ]         STREAM     CONNECTED     35212    
+unix  3      [ ]         STREAM     CONNECTED     28326    
+unix  3      [ ]         STREAM     CONNECTED     29654    
+unix  3      [ ]         STREAM     CONNECTED     28599    
+unix  3      [ ]         STREAM     CONNECTED     29669    
+unix  3      [ ]         STREAM     CONNECTED     38265    @/dbus-vfs-daemon/socket-OYDGIsMJ
+unix  3      [ ]         STREAM     CONNECTED     36590    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     31494    
+unix  3      [ ]         STREAM     CONNECTED     33416    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     28635    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     29649    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     31592    
+unix  3      [ ]         STREAM     CONNECTED     29687    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     39422    @/tmp/dbus-6xOxarLjWb
+unix  3      [ ]         STREAM     CONNECTED     32294    
+unix  3      [ ]         STREAM     CONNECTED     31497    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     28316    
+unix  3      [ ]         STREAM     CONNECTED     39397    
+unix  3      [ ]         STREAM     CONNECTED     31451    
+unix  3      [ ]         STREAM     CONNECTED     31753    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     35261    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     34515    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     36589    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     32202    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     30648    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     29692    
+unix  3      [ ]         STREAM     CONNECTED     28319    
+unix  3      [ ]         STREAM     CONNECTED     28318    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     30694    @/tmp/ibus/dbus-57m8tsJC
+unix  3      [ ]         STREAM     CONNECTED     31452    
+unix  3      [ ]         STREAM     CONNECTED     23120    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     34617    
+unix  3      [ ]         STREAM     CONNECTED     33289    
+unix  3      [ ]         STREAM     CONNECTED     39420    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     32378    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     32295    
+unix  3      [ ]         STREAM     CONNECTED     31383    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     18725    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     28324    
+unix  3      [ ]         STREAM     CONNECTED     31418    
+unix  3      [ ]         STREAM     CONNECTED     29677    
+unix  3      [ ]         STREAM     CONNECTED     33270    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     31918    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     38212    
+unix  3      [ ]         STREAM     CONNECTED     36048    
+unix  3      [ ]         STREAM     CONNECTED     29691    
+unix  3      [ ]         STREAM     CONNECTED     30458    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     36046    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     27227    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     31608    
+unix  3      [ ]         STREAM     CONNECTED     35634    
+unix  3      [ ]         STREAM     CONNECTED     25339    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     31351    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     36915    
+unix  3      [ ]         STREAM     CONNECTED     35929    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     32121    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     33833    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     31959    
+unix  3      [ ]         STREAM     CONNECTED     29579    
+unix  3      [ ]         STREAM     CONNECTED     31311    
+unix  3      [ ]         STREAM     CONNECTED     29549    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     17138    
+unix  3      [ ]         STREAM     CONNECTED     25237    
+unix  3      [ ]         STREAM     CONNECTED     35637    
+unix  3      [ ]         STREAM     CONNECTED     31955    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     19302    
+unix  3      [ ]         STREAM     CONNECTED     31953    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     31928    
+unix  3      [ ]         STREAM     CONNECTED     28351    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     29548    
+unix  3      [ ]         STREAM     CONNECTED     17137    
+unix  3      [ ]         STREAM     CONNECTED     35615    
+unix  3      [ ]         STREAM     CONNECTED     33844    @/dbus-vfs-daemon/socket-BONCpOpc
+unix  3      [ ]         STREAM     CONNECTED     31876    
+unix  3      [ ]         STREAM     CONNECTED     33414    @/tmp/dbus-9urqEDoY0v
+unix  2      [ ]         DGRAM                    18137    
+unix  3      [ ]         STREAM     CONNECTED     34232    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     35318    
+unix  3      [ ]         STREAM     CONNECTED     28636    
+unix  2      [ ]         DGRAM                    17134    
+unix  3      [ ]         STREAM     CONNECTED     32887    
+unix  3      [ ]         STREAM     CONNECTED     34707    
+unix  3      [ ]         STREAM     CONNECTED     33826    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     18411    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     34233    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     31577    
+unix  3      [ ]         STREAM     CONNECTED     31873    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     31856    
+unix  3      [ ]         STREAM     CONNECTED     31285    
+unix  3      [ ]         STREAM     CONNECTED     35614    
+unix  3      [ ]         STREAM     CONNECTED     33589    
+unix  3      [ ]         STREAM     CONNECTED     17964    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     35110    @/tmp/ibus/dbus-57m8tsJC
+unix  3      [ ]         STREAM     CONNECTED     33806    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     31776    
+unix  3      [ ]         STREAM     CONNECTED     35633    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     31877    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     20671    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     31886    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     29581    @/tmp/ibus/dbus-57m8tsJC
+unix  3      [ ]         STREAM     CONNECTED     20631    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     17056    
+unix  3      [ ]         STREAM     CONNECTED     35626    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     35467    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     36907    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     32858    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     18143    
+unix  3      [ ]         STREAM     CONNECTED     33828    @/tmp/dbus-6xOxarLjWb
+unix  3      [ ]         STREAM     CONNECTED     28602    
+unix  3      [ ]         STREAM     CONNECTED     29580    @/tmp/ibus/dbus-57m8tsJC
+unix  3      [ ]         STREAM     CONNECTED     31521    
+unix  3      [ ]         STREAM     CONNECTED     29629    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     31252    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     17394    
+unix  2      [ ]         DGRAM                    746      
+unix  3      [ ]         STREAM     CONNECTED     31628    @/dbus-vfs-daemon/socket-ZLz588PI
+unix  3      [ ]         STREAM     CONNECTED     31605    
+unix  3      [ ]         STREAM     CONNECTED     30391    @/com/ubuntu/upstart-session/1001/2636
+unix  3      [ ]         STREAM     CONNECTED     31914    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     31282    
+unix  3      [ ]         STREAM     CONNECTED     29564    @/tmp/ibus/dbus-57m8tsJC
+unix  3      [ ]         STREAM     CONNECTED     35625    
+unix  3      [ ]         STREAM     CONNECTED     32893    
+unix  3      [ ]         STREAM     CONNECTED     29646    
+unix  2      [ ]         DGRAM                    17392    
+unix  3      [ ]         STREAM     CONNECTED     32144    
+unix  3      [ ]         STREAM     CONNECTED     31616    
+unix  3      [ ]         STREAM     CONNECTED     18996    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     38221    @/tmp/ibus/dbus-57m8tsJC
+unix  3      [ ]         STREAM     CONNECTED     28464    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     29645    
+unix  3      [ ]         STREAM     CONNECTED     31419    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     32115    
+unix  3      [ ]         STREAM     CONNECTED     31872    
+unix  3      [ ]         STREAM     CONNECTED     28350    
+unix  3      [ ]         STREAM     CONNECTED     31308    
+unix  3      [ ]         STREAM     CONNECTED     35627    
+unix  3      [ ]         STREAM     CONNECTED     32152    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     29640    
+unix  3      [ ]         STREAM     CONNECTED     33847    
+unix  3      [ ]         STREAM     CONNECTED     31606    
+unix  3      [ ]         STREAM     CONNECTED     33812    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     31283    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     17296    
+unix  3      [ ]         STREAM     CONNECTED     31625    @/dbus-vfs-daemon/socket-7jfRF8m7
+unix  3      [ ]         STREAM     CONNECTED     29641    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     32175    
+unix  3      [ ]         STREAM     CONNECTED     31617    
+unix  3      [ ]         STREAM     CONNECTED     36597    
+unix  3      [ ]         STREAM     CONNECTED     32116    
+unix  3      [ ]         STREAM     CONNECTED     29655    @/tmp/dbus-6xOxarLjWb
+unix  3      [ ]         STREAM     CONNECTED     35632    
+unix  3      [ ]         STREAM     CONNECTED     31887    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     26344    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     19311    /var/run/dbus/system_bus_socket
+unix  2      [ ]         STREAM     CONNECTED     33599    
+unix  3      [ ]         STREAM     CONNECTED     33831    @/tmp/ibus/dbus-57m8tsJC
+unix  3      [ ]         STREAM     CONNECTED     31948    
+unix  3      [ ]         STREAM     CONNECTED     31320    
+unix  3      [ ]         STREAM     CONNECTED     35470    
+unix  3      [ ]         STREAM     CONNECTED     33364    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     29517    
+unix  3      [ ]         STREAM     CONNECTED     28603    @/tmp/.X11-unix/X0
+unix  3      [ ]         STREAM     CONNECTED     18933    
+unix  3      [ ]         STREAM     CONNECTED     35136    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     31612    
+unix  3      [ ]         STREAM     CONNECTED     18136    
+unix  3      [ ]         STREAM     CONNECTED     31949    
+unix  3      [ ]         STREAM     CONNECTED     31929    @/tmp/dbus-9urqEDoY0v
+unix  3      [ ]         STREAM     CONNECTED     29563    
+unix  3      [ ]         STREAM     CONNECTED     33226    
+unix  3      [ ]         STREAM     CONNECTED     31938    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     33598    
+unix  3      [ ]         STREAM     CONNECTED     31595    
+unix  3      [ ]         STREAM     CONNECTED     33811    /run/systemd/journal/stdout
+unix  2      [ ]         STREAM     CONNECTED     31757    
+unix  3      [ ]         STREAM     CONNECTED     35930    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     29647    @/tmp/dbus-6xOxarLjWb
+unix  3      [ ]         STREAM     CONNECTED     36047    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     33797    
+unix  3      [ ]         STREAM     CONNECTED     34234    
+unix  3      [ ]         STREAM     CONNECTED     31956    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     31232    
+unix  3      [ ]         STREAM     CONNECTED     31952    
+unix  3      [ ]         STREAM     CONNECTED     27402
+
+
+$ netstat -at
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 *:netbios-ssn           *:*                     LISTEN     
+tcp        0      0 sct-H81M-S:domain       *:*                     LISTEN     
+tcp        0      0 localhost:ipp           *:*                     LISTEN     
+tcp        0      0 *:microsoft-ds          *:*                     LISTEN     
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.5:51254          ESTABLISHED
+tcp        0      0 10.0.4.37:microsoft-ds  10.0.4.19:60680         ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.46.21:44118        ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.17:34422         ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.17:34424         ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.21:49738         ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.14:47724         ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.38:57006         ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.11:58700         ESTABLISHED
+tcp       12      0 localhost:49190         sct-H81M-S:netbios-ssn  ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.16:49484         ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.6:53402          ESTABLISHED
+tcp       16      0 10.0.4.37:52552         10.0.4.36:netbios-ssn   ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.4:42982          ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.12:39136         ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.26:38796         ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.26:38770         ESTABLISHED
+tcp       16      0 localhost:49180         sct-H81M-S:netbios-ssn  ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.18:40782         ESTABLISHED
+tcp        0      0 sct-H81M-S:netbios-ssn  localhost:49190         ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.19:60398         ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.9:45342          ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.20:50582         ESTABLISHED
+tcp        0     12 10.0.4.37:netbios-ssn   10.0.40.35:33116        ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.8:60232          ESTABLISHED
+tcp        0      0 sct-H81M-S:netbios-ssn  localhost:49180         ESTABLISHED
+tcp        0      0 10.0.4.37:netbios-ssn   10.0.4.14:47750         ESTABLISHED
+tcp6       0      0 [::]:netbios-ssn        [::]:*                  LISTEN     
+tcp6       0      0 ip6-localhost:ipp       [::]:*                  LISTEN     
+tcp6       0      0 [::]:microsoft-ds       [::]:*                  LISTEN
+
+
+$ netstat -au
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+udp        0      0 sct-H81M-S:domain       *:*                                
+udp        0      0 10.255.255.2:netbios-ns *:*                                
+udp        0      0 10.0.4.37:netbios-ns    *:*                                
+udp        0      0 *:netbios-ns            *:*                                
+udp        0      0 10.255.255.:netbios-dgm *:*                                
+udp        0      0 10.0.4.37:netbios-dgm   *:*                                
+udp        0      0 *:netbios-dgm           *:*                                
+udp        0      0 *:37212                 *:*                                
+udp        0      0 *:ipp                   *:*                                
+udp        0      0 *:mdns                  *:*                                
+udp6       0      0 [::]:57311              [::]:*                             
+udp6       0      0 [::]:48252              [::]:*                             
+udp6       0      0 [::]:mdns               [::]:*                             
+
+
+$ ss -ta
+State       Recv-Q Send-Q                        Local Address:Port                                         Peer Address:Port                
+LISTEN      0      50                                        *:netbios-ssn                                             *:*                    
+LISTEN      0      5                                 127.0.1.1:domain                                                  *:*                    
+LISTEN      0      5                                 127.0.0.1:ipp                                                     *:*                    
+LISTEN      0      50                                        *:microsoft-ds                                            *:*                    
+ESTAB       0      0                                 10.0.4.37:netbios-ssn                                      10.0.4.5:51254                
+ESTAB       0      0                                 10.0.4.37:microsoft-ds                                    10.0.4.19:60680                
+ESTAB       0      0                                 10.0.4.37:netbios-ssn                                    10.0.46.21:44118                
+ESTAB       0      0                                 10.0.4.37:netbios-ssn                                     10.0.4.17:34422                
+ESTAB       0      0                                 10.0.4.37:netbios-ssn                                     10.0.4.17:34424                
+ESTAB       0      0                                 10.0.4.37:netbios-ssn                                     10.0.4.21:49738                
+ESTAB       0      0                                 10.0.4.37:netbios-ssn                                     10.0.4.14:47724                
+ESTAB       0      0                                 10.0.4.37:netbios-ssn                                     10.0.4.38:57006                
+ESTAB       0      0                                 10.0.4.37:netbios-ssn                                     10.0.4.11:58700                
+ESTAB       16     0                                 127.0.0.1:49190                                           127.0.1.1:netbios-ssn          
+ESTAB       0      0                                 10.0.4.37:netbios-ssn                                     10.0.4.16:49484                
+ESTAB       0      0                                 10.0.4.37:netbios-ssn                                      10.0.4.6:53402                
+ESTAB       20     0                                 10.0.4.37:52552                                           10.0.4.36:netbios-ssn          
+ESTAB       0      0                                 10.0.4.37:netbios-ssn                                      10.0.4.4:42982                
+ESTAB       0      0                                 10.0.4.37:netbios-ssn                                     10.0.4.12:39136                
+ESTAB       0      0                                 10.0.4.37:netbios-ssn                                     10.0.4.26:38796                
+ESTAB       0      0                                 10.0.4.37:netbios-ssn                                     10.0.4.26:38770                
+ESTAB       20     0                                 127.0.0.1:49180                                           127.0.1.1:netbios-ssn          
+ESTAB       0      0                                 10.0.4.37:netbios-ssn                                     10.0.4.18:40782                
+ESTAB       0      0                                 127.0.1.1:netbios-ssn                                     127.0.0.1:49190                
+ESTAB       0      0                                 10.0.4.37:netbios-ssn                                     10.0.4.19:60398                
+ESTAB       0      0                                 10.0.4.37:netbios-ssn                                      10.0.4.9:45342                
+ESTAB       0      0                                 10.0.4.37:netbios-ssn                                     10.0.4.20:50582                
+ESTAB       0      0                                 10.0.4.37:netbios-ssn                                      10.0.4.8:60232                
+ESTAB       0      0                                 127.0.1.1:netbios-ssn                                     127.0.0.1:49180                
+ESTAB       0      0                                 10.0.4.37:netbios-ssn                                     10.0.4.14:47750                
+LISTEN      0      50                                       :::netbios-ssn                                            :::*                    
+LISTEN      0      5                                       ::1:ipp                                                    :::*                    
+LISTEN      0      50                                       :::microsoft-ds                                           :::*
+
+
+$ ss -ua
+State       Recv-Q Send-Q                        Local Address:Port                                         Peer Address:Port                
+UNCONN      0      0                                 127.0.1.1:domain                                                  *:*                    
+UNCONN      0      0                            10.255.255.255:netbios-ns                                              *:*                    
+UNCONN      0      0                                 10.0.4.37:netbios-ns                                              *:*                    
+UNCONN      0      0                                         *:netbios-ns                                              *:*                    
+UNCONN      0      0                            10.255.255.255:netbios-dgm                                             *:*                    
+UNCONN      0      0                                 10.0.4.37:netbios-dgm                                             *:*                    
+UNCONN      0      0                                         *:netbios-dgm                                             *:*                    
+UNCONN      0      0                                         *:37212                                                   *:*                    
+UNCONN      0      0                                         *:ipp                                                     *:*                    
+UNCONN      0      0                                         *:mdns                                                    *:*                    
+UNCONN      0      0                                        :::57311                                                  :::*                    
+UNCONN      0      0                                 ::%enp2s0:48252                                                  :::*                    
+UNCONN      0      0                                        :::mdns                                                   :::*
+
+
+$ ss -xa
+Netid  State      Recv-Q Send-Q Local Address:Port                 Peer Address:Port                
+u_str  LISTEN     0      128    @/tmp/.ICE-unix/2857 30557                 * 0                    
+u_dgr  UNCONN     0      0      /run/user/1001/systemd/notify 31186                 * 0                    
+u_str  LISTEN     0      128    /run/user/1001/systemd/private 31187                 * 0                    
+u_seq  LISTEN     0      128    /run/udev/control 14859                 * 0                    
+u_str  LISTEN     0      128    /run/user/1001/snapd-session-agent.socket 31191                 * 0                    
+u_str  LISTEN     0      128    /run/user/1001/keyring/control 28189                 * 0                    
+u_str  LISTEN     0      128    /tmp/.X11-unix/X0 30938                 * 0                    
+u_str  LISTEN     0      128    /tmp/.ICE-unix/2857 30558                 * 0                    
+u_str  LISTEN     0      128    /run/user/1001/keyring/pkcs11 28239                 * 0                    
+u_str  LISTEN     0      128    /run/user/1001/keyring/ssh 28241                 * 0                    
+u_dgr  UNCONN     0      0      /var/lib/samba/private/msg.sock/3502 33233                 * 0                    
+u_dgr  UNCONN     0      0      /var/lib/samba/private/msg.sock/1210 22261                 * 0                    
+u_str  LISTEN     0      10     @cs1-com.canonical.Unity.Master.Scope.files.T3974172065954 35619                 * 0                    
+u_dgr  UNCONN     0      0      /var/lib/samba/private/msg.sock/4070 36947                 * 0                    
+u_str  LISTEN     0      5      /run/user/1001/pulse/native 31468                 * 0                    
+u_dgr  UNCONN     0      0      /var/lib/samba/private/msg.sock/1226 23265                 * 0                    
+u_str  LISTEN     0      10     @cs1-com.canonical.Unity.Scope.rhythmbox.T8139879796049 39402                 * 0                    
+u_dgr  UNCONN     0      0      /var/lib/samba/private/msg.sock/1227 23945                 * 0                    
+u_dgr  UNCONN     0      0      /var/lib/samba/private/msg.sock/1231 23278                 * 0                    
+u_str  LISTEN     0      10     @cs1-com.canonical.Unity.Scope.files.T3974761311616 36912                 * 0                    
+u_str  LISTEN     0      128    @/tmp/.X11-unix/X0 30937                 * 0                    
+u_dgr  UNCONN     0      0      /var/lib/samba/private/msg.sock/3761 33445                 * 0                    
+u_str  LISTEN     0      10     @cs1-com.canonical.Unity.Master.Scope.music.T8139211152663 38167                 * 0                    
+u_str  LISTEN     0      30     @/tmp/dbus-6xOxarLjWb 29637                 * 0                    
+u_dgr  UNCONN     0      0      /run/systemd/cgroups-agent 14845                 * 0                    
+u_str  LISTEN     0      128    /run/systemd/private 14846                 * 0                    
+u_dgr  UNCONN     0      0      /run/systemd/journal/syslog 14850                 * 0                    
+u_dgr  UNCONN     0      0      /run/systemd/journal/dev-log 14860                 * 0                    
+u_str  LISTEN     0      128    /run/systemd/fsck.progress 14861                 * 0                    
+u_str  LISTEN     0      128    /run/systemd/journal/stdout 14862                 * 0                    
+u_dgr  UNCONN     0      0      /run/systemd/journal/socket 14863                 * 0                    
+u_str  LISTEN     0      128    /run/snapd.socket 16908                 * 0                    
+u_str  LISTEN     0      10     @cs1-com.canonical.Unity.Scope.scopes.T3977685302147 35642                 * 0                    
+u_str  LISTEN     0      128    /run/snapd-snap.socket 16909                 * 0                    
+u_str  LISTEN     0      128    /run/uuidd/request 16910                 * 0                    
+u_dgr  UNCONN     0      0      /var/lib/samba/private/msg.sock/3704 32401                 * 0                    
+u_str  LISTEN     0      128    /var/run/avahi-daemon/socket 16911                 * 0                    
+u_str  LISTEN     0      128    /var/run/dbus/system_bus_socket 16912                 * 0                    
+u_str  LISTEN     0      128    /run/acpid.socket 16913                 * 0                    
+u_dgr  UNCONN     0      0      /var/lib/samba/private/msg.sock/3762 34717                 * 0                    
+u_str  LISTEN     0      128    /var/run/cups/cups.sock 16914                 * 0                    
+u_dgr  UNCONN     0      0      /var/lib/samba/private/msg.sock/3948 35974                 * 0                    
+u_dgr  UNCONN     0      0      /var/lib/samba/private/msg.sock/4083 32699                 * 0                    
+u_dgr  UNCONN     0      0      /var/lib/samba/private/msg.sock/4165 36193                 * 0                    
+u_dgr  UNCONN     0      0      /var/lib/samba/private/msg.sock/4166 37969                 * 0                    
+u_dgr  UNCONN     0      0      /var/lib/samba/private/msg.sock/4112 36999                 * 0                    
+u_dgr  UNCONN     0      0      /var/lib/samba/private/msg.sock/3757 34710                 * 0                    
+u_dgr  UNCONN     0      0      /var/lib/samba/private/msg.sock/4169 36195                 * 0                    
+u_dgr  UNCONN     0      0      /var/lib/samba/private/msg.sock/4184 37975                 * 0                    
+u_dgr  UNCONN     0      0      /var/lib/samba/private/msg.sock/4185 36224                 * 0                    
+u_dgr  UNCONN     0      0      /var/lib/samba/private/msg.sock/4186 37980                 * 0                    
+u_dgr  UNCONN     0      0      /var/lib/samba/private/msg.sock/4250 38965                 * 0                    
+u_dgr  UNCONN     0      0      /var/lib/samba/private/msg.sock/4339 38119                 * 0                    
+u_dgr  UNCONN     0      0      /var/lib/samba/private/msg.sock/4292 38080                 * 0                    
+u_dgr  UNCONN     0      0      /var/lib/samba/private/msg.sock/4301 37208                 * 0                    
+u_dgr  UNCONN     0      0      /var/lib/samba/private/msg.sock/4309 37243                 * 0                    
+u_str  LISTEN     0      5      /var/run/samba/nmbd/unexpected 22271                 * 0                    
+u_str  LISTEN     0      10     @cs1-com.canonical.Unity.Master.Scope.applications.T3974166673550 35618                 * 0                    
+u_str  LISTEN     0      30     @/com/ubuntu/upstart-session/1001/2636 31199                 * 0                    
+u_str  LISTEN     0      10     /var/run/NetworkManager/private-dhcp 24845                 * 0                    
+u_str  LISTEN     0      10     @cs1-com.canonical.Unity.Scope.applications.T3977679072787 35641                 * 0                    
+u_dgr  UNCONN     0      0      /var/lib/samba/private/msg.sock/3758 33440                 * 0                    
+u_str  LISTEN     0      5      /home/cs1/.gnupg/S.gpg-agent 29590                 * 0                    
+u_dgr  UNCONN     0      0      /var/lib/samba/private/msg.sock/3703 35326                 * 0                    
+u_dgr  UNCONN     0      0      /var/lib/samba/private/msg.sock/3806 34729                 * 0                    
+u_str  LISTEN     0      30     @/tmp/dbus-9urqEDoY0v 30359                 * 0                    
+u_str  LISTEN     0      10     @/tmp/ibus/dbus-57m8tsJC 28270                 * 0                    
+u_dgr  UNCONN     0      0      /run/systemd/notify 14844                 * 0                    
+u_str  ESTAB      0      0       * 29502                 * 28252                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 32855                 * 32854                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 29671                 * 30445                
+u_str  ESTAB      0      0      @cs1-com.canonical.Unity.Scope.rhythmbox.T8139879796049 38171                 * 37393                
+u_dgr  UNCONN     0      0       * 31911                 * 0                    
+u_str  ESTAB      0      0       * 31870                 * 31871                
+u_str  ESTAB      0      0       * 29588                 * 29589                
+u_str  ESTAB      0      0      @/dbus-vfs-daemon/socket-4aqkDAsG 32305                 * 35191                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 32538                 * 35917                
+u_str  ESTAB      0      0       * 30486                 * 31747                
+u_str  ESTAB      0      0       * 31352                 * 28321                
+u_str  ESTAB      0      0      @/tmp/dbus-6xOxarLjWb 31942                 * 32853                
+u_str  ESTAB      0      0       * 31171                 * 30321                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 31302                 * 29586                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 25843                 * 26762                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 23773                 * 22130                
+u_str  ESTAB      0      0       * 35190                 * 32290                
+u_str  ESTAB      0      0       * 31254                 * 29531                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 30546                 * 31418                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 31349                 * 31347                
+u_str  ESTAB      0      0       * 28227                 * 31229                
+u_str  ESTAB      0      0       * 32854                 * 32855                
+u_dgr  UNCONN     0      0       * 31177                 * 14860                
+u_str  ESTAB      0      0      @cs1-com.canonical.Unity.Master.Scope.music.T8139211152663 38168                 * 37387                
+u_str  ESTAB      0      0      @/tmp/.X11-unix/X0 31540                 * 31890                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 30401                 * 28236                
+u_dgr  UNCONN     0      0       * 25219                 * 14860                
+u_str  ESTAB      0      0       * 30382                 * 30386                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 31229                 * 28227                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 30321                 * 31171                
+u_str  ESTAB      0      0       * 31890                 * 31540                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 31871                 * 31870                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 31284                 * 31281                
+u_str  ESTAB      0      0      @/dbus-vfs-daemon/socket-XDONIfsr 34533                 * 35192                
+u_str  ESTAB      0      0       * 30445                 * 29671                
+u_str  ESTAB      0      0       * 28224                 * 28225                
+u_dgr  UNCONN     0      768     * 22044                 * 22043                
+u_str  ESTAB      0      0      @/tmp/.X11-unix/X0 32847                 * 32846                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 29672                 * 30446                
+u_str  ESTAB      0      0       * 31272                 * 29565                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 32290                 * 35190                
+u_str  ESTAB      0      0       * 31500                 * 28635                
+u_str  ESTAB      0      0       * 27359                 * 26344                
+u_str  ESTAB      0      0       * 35313                 * 33361                
+u_str  ESTAB      0      0       * 30446                 * 29672                
+u_str  ESTAB      0      0      @/dbus-vfs-daemon/socket-owrWrY7v 38275                 * 36791                
+u_str  ESTAB      0      0       * 35192                 * 34533                
+u_str  ESTAB      0      0       * 871                   * 15079                
+u_str  ESTAB      0      0       * 35912                 * 32537                
+u_str  ESTAB      0      0      @/dbus-vfs-daemon/socket-1CBmlzWZ 33834                 * 31617                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 31578                 * 33797                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 31912                 * 28666                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 33361                 * 35313                
+u_str  ESTAB      0      0       * 36791                 * 38275                
+u_str  ESTAB      0      0      @/tmp/ibus/dbus-57m8tsJC 29589                 * 29588                
+u_str  ESTAB      0      0       * 28236                 * 30401                
+u_str  ESTAB      0      0       * 35161                 * 33252                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 32537                 * 35912                
+u_str  ESTAB      0      0       * 31348                 * 31350                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 28252                 * 29502                
+u_dgr  UNCONN     0      0       * 22043                 * 22044                
+u_str  ESTAB      0      0       * 31281                 * 31284                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 29451                 * 31200                
+u_str  ESTAB      0      0       * 35317                 * 33363                
+u_str  ESTAB      0      0       * 30377                 * 30378                
+u_str  ESTAB      0      0       * 28164                 * 29393                
+u_str  ESTAB      0      0       * 27196                 * 25220                
+u_str  ESTAB      0      0      @/tmp/.X11-unix/X0 32849                 * 32848                
+u_str  ESTAB      0      0       * 30447                 * 30448                
+u_str  ESTAB      0      0       * 31883                 * 28615                
+u_str  ESTAB      0      0      @/dbus-vfs-daemon/socket-BJvPAx4D 33240                 * 35156                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 30378                 * 30377                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 29531                 * 31254                
+u_str  ESTAB      0      0       * 26762                 * 25843                
+u_str  ESTAB      0      0       * 33829                 * 33830                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 30454                 * 31375                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 15079                 * 871                  
+u_str  ESTAB      0      0      /run/user/1001/pulse/native 31484                 * 31483                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 28321                 * 31352                
+u_str  ESTAB      0      0       * 32848                 * 32849                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 29569                 * 31273                
+u_str  ESTAB      0      0       * 35191                 * 32305                
+u_str  ESTAB      0      0      @/tmp/.X11-unix/X0 30451                 * 31374                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 29577                 * 28280                
+u_str  ESTAB      0      0      @/com/ubuntu/upstart-session/1001/2636 30386                 * 30382                
+u_str  ESTAB      0      0       * 32846                 * 32847                
+u_dgr  UNCONN     0      0       * 31180                 * 14863                
+u_str  ESTAB      0      0       * 37387                 * 38168                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 30559                 * 28388                
+u_str  ESTAB      0      0      @/tmp/ibus/dbus-57m8tsJC 33830                 * 33829                
+u_str  ESTAB      0      0       * 31375                 * 30454                
+u_str  ESTAB      0      0       * 28280                 * 29577                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 29393                 * 28164                
+u_str  ESTAB      0      0      @/tmp/ibus/dbus-57m8tsJC 34641                 * 33365                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 33795                 * 31577                
+u_str  ESTAB      0      0       * 31273                 * 29569                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 33363                 * 35317                
+u_str  ESTAB      0      0       * 32296                 * 33288                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 31350                 * 31348                
+u_str  ESTAB      0      0       * 31581                 * 33798                
+u_str  ESTAB      0      0       * 31374                 * 30451                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 17139                 * 18143                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 33288                 * 32296                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 25220                 * 27196                
+u_str  ESTAB      0      0       * 33365                 * 34641                
+u_str  ESTAB      0      0       * 37393                 * 38171                
+u_str  ESTAB      0      0      @/tmp/.ICE-unix/2857 28615                 * 31883                
+u_str  ESTAB      0      0       * 29586                 * 31302                
+u_str  ESTAB      0      0       * 35156                 * 33240                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 31747                 * 30486                
+u_str  ESTAB      0      0       * 31347                 * 31349                
+u_str  ESTAB      0      0       * 28225                 * 28224                
+u_str  ESTAB      0      0       * 32853                 * 31942                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 30448                 * 30447                
+u_str  ESTAB      0      0       * 28388                 * 30559                
+u_str  ESTAB      0      0      @/tmp/.X11-unix/X0 29565                 * 31272                
+u_str  ESTAB      0      0       * 31200                 * 29451                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 33252                 * 35161                
+u_str  ESTAB      0      0       * 30634                 * 28459                
+u_dgr  UNCONN     0      0       * 19137                 * 14860                
+u_dgr  UNCONN     0      0       * 16872                 * 16871                
+u_str  ESTAB      0      0      @/tmp/.X11-unix/X0 32850                 * 33800                
+u_str  ESTAB      0      0       * 29482                 * 31239                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 17142                 * 20474                
+u_str  ESTAB      0      0       * 32651                 * 35620                
+u_str  ESTAB      0      0      @/tmp/.X11-unix/X0 33359                 * 32382                
+u_str  ESTAB      0      0       * 24888                 * 24889                
+u_str  ESTAB      0      0       * 18418                 * 19308                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 35931                 * 32542                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 30502                 * 30501                
+u_str  ESTAB      0      0       * 33800                 * 32850                
+u_str  ESTAB      0      0       * 31576                 * 33794                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 31750                 * 31391                
+u_str  ESTAB      0      0       * 33596                 * 35927                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 31599                 * 33817                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 31234                 * 29474                
+u_str  ESTAB      0      0       * 20654                 * 19310                
+u_str  ESTAB      0      0       * 33250                 * 35160                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 25043                 * 26851                
+u_dgr  UNCONN     0      0       * 18424                 * 0                    
+u_str  ESTAB      0      0       * 19307                 * 19309                
+u_str  ESTAB      0      0       * 30631                 * 30633                
+u_str  ESTAB      0      0       * 31453                 * 28439                
+u_str  ESTAB      0      0       * 30472                 * 29694                
+u_dgr  UNCONN     0      0       * 16865                 * 14863                
+u_str  ESTAB      0      0       * 33822                 * 33823                
+u_str  ESTAB      0      0       * 31841                 * 31466                
+u_str  ESTAB      0      0       * 29664                 * 28320                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 28244                 * 28243                
+u_str  ESTAB      0      0       * 30362                 * 28226                
+u_str  ESTAB      0      0       * 26851                 * 25043                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 32656                 * 35638                
+u_str  ESTAB      0      0       * 29667                 * 29668                
+u_str  ESTAB      0      0       * 30500                 * 31761                
+u_str  ESTAB      0      0       * 32385                 * 34638                
+u_str  ESTAB      0      0       * 28248                 * 29496                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 23020                 * 23890                
+u_str  ESTAB      0      0      @/tmp/.X11-unix/X0 32791                 * 28665                
+u_str  ESTAB      0      0       * 31591                 * 33805                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 31564                 * 31549                
+u_str  ESTAB      0      0       * 20682                 * 21743                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 30684                 * 30683                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 34638                 * 32385                
+u_str  ESTAB      0      0       * 28671                 * 31915                
+u_str  ESTAB      0      0      @/tmp/dbus-6xOxarLjWb 30479                 * 31390                
+u_str  ESTAB      0      0      @cs1-com.canonical.Unity.Scope.scopes.T3977685302147 36916                 * 36915                
+u_str  ESTAB      0      0      @/tmp/dbus-6xOxarLjWb 31548                 * 31547                
+u_str  ESTAB      0      0       * 37528                 * 38265                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 26186                 * 26182                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 18277                 * 19113                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 31598                 * 33816                
+u_str  ESTAB      0      0       * 31547                 * 31548                
+u_str  ESTAB      800    0       * 30941                 * 29210                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 31917                 * 28672                
+u_str  ESTAB      0      0      @/tmp/.X11-unix/X0 30636                 * 28458                
+u_str  ESTAB      0      0      @/tmp/dbus-6xOxarLjWb 29668                 * 29667                
+u_str  ESTAB      0      0       * 32542                 * 35931                
+u_dgr  UNCONN     0      0       * 17289                 * 14860                
+u_dgr  UNCONN     0      0       * 16869                 * 16870                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 35927                 * 33596                
+u_str  ESTAB      0      0       * 33820                 * 32860                
+u_str  ESTAB      0      0       * 31842                 * 30628                
+u_str  ESTAB      0      0      @/com/ubuntu/upstart-session/1001/2636 31239                 * 29482                
+u_str  ESTAB      0      0      @cs1-com.canonical.Unity.Master.Scope.applications.T3974166673550 35620                 * 32651                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 31874                 * 28599                
+u_str  ESTAB      0      0       * 30440                 * 28354                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 31880                 * 30693                
+u_str  ESTAB      0      0       * 19113                 * 18277                
+u_str  ESTAB      0      0       * 32657                 * 36913                
+u_str  ESTAB      0      0      @/tmp/dbus-6xOxarLjWb 33804                 * 33803                
+u_str  ESTAB      0      0       * 35638                 * 32656                
+u_str  ESTAB      0      0       * 32382                 * 33359                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 29496                 * 28248                
+u_str  ESTAB      0      0       * 23890                 * 23020                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 33794                 * 31576                
+u_dgr  UNCONN     0      0       * 24896                 * 14860                
+u_str  ESTAB      0      0       * 18335                 * 17143                
+u_str  ESTAB      0      0      /run/user/1001/pulse/native 28459                 * 30634                
+u_str  ESTAB      0      0       * 30501                 * 30502                
+u_str  ESTAB      0      0       * 30459                 * 29693                
+u_str  ESTAB      0      0      @cs1-com.canonical.Unity.Scope.files.T3974761311616 36913                 * 32657                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 33823                 * 33822                
+u_str  ESTAB      0      0       * 30683                 * 30684                
+u_str  ESTAB      0      0       * 29474                 * 31234                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 35160                 * 33250                
+u_str  ESTAB      0      0       * 28458                 * 30636                
+u_str  ESTAB      0      0      @/tmp/dbus-6xOxarLjWb 31395                 * 31394                
+u_str  ESTAB      0      0       * 31549                 * 31564                
+u_dgr  UNCONN     0      0       * 30563                 * 14860                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 29693                 * 30459                
+u_str  ESTAB      0      0       * 26182                 * 26186                
+u_str  ESTAB      0      0      @/tmp/dbus-6xOxarLjWb 35100                 * 35099                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 28606                 * 30685                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 31466                 * 31841                
+u_str  ESTAB      0      0       * 29659                 * 31351                
+u_str  ESTAB      0      0       * 32384                 * 33362                
+u_str  ESTAB      0      0       * 31916                 * 31918                
+u_str  ESTAB      0      0       * 28672                 * 31917                
+u_str  ESTAB      0      0       * 31391                 * 31750                
+u_str  ESTAB      0      0      /run/user/1001/pulse/native 30633                 * 30631                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 28439                 * 31453                
+u_str  ESTAB      0      0       * 17291                 * 17292                
+u_dgr  UNCONN     0      0       * 16870                 * 16869                
+u_str  ESTAB      0      0       * 33803                 * 33804                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 30628                 * 31842                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 29205                 * 30940                
+u_str  ESTAB      0      0       * 36914                 * 35643                
+u_str  ESTAB      0      0       * 28249                 * 29497                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 28226                 * 30362                
+u_str  ESTAB      0      0       * 28665                 * 32791                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 28360                 * 30441                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 33805                 * 31591                
+u_str  ESTAB      0      0       * 28669                 * 28670                
+u_dgr  UNCONN     0      0       * 16871                 * 16872                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 32860                 * 33820                
+u_str  ESTAB      0      0       * 30685                 * 28606                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 28320                 * 29664                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 31915                 * 28671                
+u_str  ESTAB      0      0       * 28243                 * 28244                
+u_str  ESTAB      0      0       * 30342                 * 31212                
+u_str  ESTAB      0      0       * 28666                 * 31912                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 28354                 * 30440                
+u_str  ESTAB      0      0       * 30693                 * 31880                
+u_str  ESTAB      0      0       * 22130                 * 23773                
+u_str  ESTAB      0      0       * 35099                 * 35100                
+u_str  ESTAB      0      0       * 20474                 * 17142                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 17140                 * 17056                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 35635                 * 35634                
+u_str  ESTAB      0      0       * 30441                 * 28360                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 31761                 * 30500                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 21743                 * 20682                
+u_str  ESTAB      0      0       * 33816                 * 31598                
+u_dgr  UNCONN     0      0       * 29380                 * 14860                
+u_str  ESTAB      0      0       * 30940                 * 29205                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 19310                 * 20654                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 18153                 * 20396                
+u_str  ESTAB      0      0      @/tmp/dbus-6xOxarLjWb 33362                 * 32384                
+u_str  ESTAB      0      0       * 31390                 * 30479                
+u_str  ESTAB      0      0      @/com/ubuntu/upstart-session/1001/2636 31212                 * 30342                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 19309                 * 19307                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 17143                 * 18335                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 33798                 * 31581                
+u_str  ESTAB      0      0       * 31483                 * 31484                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 29694                 * 30472                
+u_str  ESTAB      0      0       * 28327                 * 28326                
+u_str  ESTAB      0      0       * 33817                 * 31599                
+u_str  ESTAB      0      19200  @/tmp/.X11-unix/X0 29210                 * 30941                
+u_str  ESTAB      0      0      @cs1-com.canonical.Unity.Scope.applications.T3977679072787 35643                 * 36914                
+u_str  ESTAB      0      0       * 31394                 * 31395                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 24889                 * 24888                
+u_str  ESTAB      0      0       * 21517                 * 20671                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 19308                 * 18418                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 32329                 * 35212                
+u_str  ESTAB      0      0       * 29656                 * 31337                
+u_str  ESTAB      0      0       * 28306                 * 29609                
+u_str  ESTAB      0      0       * 18208                 * 18209                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 23910                 * 21258                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 34526                 * 33289                
+u_dgr  UNCONN     0      0       * 1355                  * 14863                
+u_str  ESTAB      0      0       * 38217                 * 39422                
+u_str  ESTAB      0      0       * 35109                 * 34242                
+u_str  ESTAB      0      0       * 30457                 * 30458                
+u_str  ESTAB      0      0       * 20288                 * 18995                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 29609                 * 28306                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 18209                 * 18208                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 34242                 * 35109                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 31830                 * 31452                
+u_str  ESTAB      0      0       * 30424                 * 29648                
+u_str  ESTAB      0      0      @/tmp/dbus-6xOxarLjWb 34618                 * 34617                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 34516                 * 33269                
+u_str  ESTAB      0      0       * 17292                 * 17291                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 32648                 * 36048                
+u_str  ESTAB      0      0      @/dbus-vfs-daemon/socket-MIwOdZr4 35168                 * 32256                
+u_str  ESTAB      0      0       * 35108                 * 32141                
+u_str  ESTAB      0      0       * 28637                 * 31501                
+u_str  ESTAB      0      0       * 32467                 * 33416                
+u_str  ESTAB      0      0       * 29653                 * 30425                
+u_str  ESTAB      0      0       * 28310                 * 31314                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 31829                 * 31451                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 29676                 * 29675                
+u_str  ESTAB      0      0       * 21258                 * 23910                
+u_dgr  UNCONN     0      0       * 34495                 * 14860                
+u_str  ESTAB      0      0      @/tmp/.X11-unix/X0 32118                 * 35097                
+u_dgr  UNCONN     0      0       * 15087                 * 15086                
+u_str  ESTAB      0      0       * 38213                 * 36589                
+u_str  ESTAB      0      0       * 20073                 * 18725                
+u_str  ESTAB      0      0       * 31587                 * 31938                
+u_str  ESTAB      0      0       * 29657                 * 28318                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 28355                 * 29669                
+u_str  ESTAB      0      0      @/tmp/dbus-6xOxarLjWb 29648                 * 30424                
+u_str  ESTAB      0      0       * 33269                 * 34516                
+u_str  ESTAB      0      0       * 37678                 * 39503                
+u_str  ESTAB      0      0       * 33592                 * 0                    
+u_str  ESTAB      0      0       * 32256                 * 35168                
+u_str  ESTAB      0      0      @/tmp/.X11-unix/X0 31314                 * 28310                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 35628                 * 35627                
+u_str  ESTAB      0      0      @/tmp/.X11-unix/X0 29628                 * 30421                
+u_dgr  UNCONN     0      0       * 25206                 * 14860                
+u_str  ESTAB      0      0       * 33268                 * 34515                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 37389                 * 39397                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 30649                 * 31495                
+u_str  ESTAB      0      0       * 35210                 * 33314                
+u_str  ESTAB      0      0       * 28325                 * 28324                
+u_str  ESTAB      0      0      @/tmp/.X11-unix/X0 28371                 * 28369                
+u_str  ESTAB      0      0       * 30421                 * 29628                
+u_str  ESTAB      0      0       * 34615                 * 35261                
+u_str  ESTAB      0      0       * 38215                 * 36590                
+u_str  ESTAB      0      0       * 32652                 * 35621                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 18995                 * 20288                
+u_str  ESTAB      0      0       * 35211                 * 33315                
+u_str  ESTAB      0      0       * 39396                 * 37388                
+u_str  ESTAB      0      0      @/tmp/.X11-unix/X0 31425                 * 31424                
+u_str  ESTAB      0      0       * 28274                 * 29551                
+u_str  ESTAB      0      0       * 21261                 * 23120                
+u_str  ESTAB      0      0       * 35917                 * 32538                
+u_str  ESTAB      0      0       * 35263                 * 32378                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 34520                 * 32295                
+u_str  ESTAB      0      0      @/tmp/dbus-6xOxarLjWb 31566                 * 31565                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 30426                 * 29654                
+u_str  ESTAB      0      0       * 28311                 * 29649                
+u_str  ESTAB      0      0       * 31499                 * 30694                
+u_str  ESTAB      0      0       * 31424                 * 31425                
+u_str  ESTAB      0      0       * 31401                 * 31753                
+u_str  ESTAB      0      0      @cs1-com.canonical.Unity.Master.Scope.files.T3974172065954 35621                 * 32652                
+u_str  ESTAB      0      0      @/dbus-vfs-daemon/socket-W5CthMcm 39503                 * 37678                
+u_str  ESTAB      0      0       * 32255                 * 34467                
+u_str  ESTAB      0      0       * 31496                 * 31497                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 31382                 * 29691                
+u_str  ESTAB      0      0       * 20396                 * 18153                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 28317                 * 28316                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 30425                 * 29653                
+u_str  ESTAB      0      0       * 28369                 * 28371                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 29678                 * 29677                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 31321                 * 30427                
+u_str  ESTAB      0      0       * 33304                 * 0                    
+u_str  ESTAB      0      0       * 34518                 * 33270                
+u_str  ESTAB      0      0       * 35097                 * 32118                
+u_dgr  UNCONN     0      0       * 15080                 * 14863                
+u_str  ESTAB      0      0       * 39399                 * 37392                
+u_str  ESTAB      0      0      @/dbus-vfs-daemon/socket-BM7WAyTn 34467                 * 32255                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 32141                 * 35108                
+u_str  ESTAB      0      0       * 31495                 * 30649                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 33315                 * 35211                
+u_str  ESTAB      0      0       * 31567                 * 31914                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 37388                 * 39396                
+u_str  ESTAB      0      0      @/tmp/dbus-6xOxarLjWb 28670                 * 28669                
+u_str  ESTAB      0      0      @/tmp/.X11-unix/X0 29551                 * 28274                
+u_dgr  UNCONN     0      0       * 15086                 * 15087                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 37392                 * 39399                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 34519                 * 32294                
+u_str  ESTAB      0      0       * 31565                 * 31566                
+u_str  ESTAB      0      0      @/tmp/dbus-6xOxarLjWb 31501                 * 28637                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 29497                 * 28249                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 33314                 * 35210                
+u_str  ESTAB      0      0      @/tmp/ibus/dbus-57m8tsJC 29662                 * 28319                
+u_str  ESTAB      0      0      @/tmp/.X11-unix/X0 31337                 * 29656                
+u_str  ESTAB      0      0       * 28367                 * 29687                
+u_str  ESTAB      0      0       * 29675                 * 29676                
+u_str  ESTAB      0      0       * 30427                 * 31321                
+u_str  ESTAB      0      0       * 32201                 * 32202                
+u_str  ESTAB      0      0       * 35212                 * 32329                
+u_str  ESTAB      0      0       * 28326                 * 28327                
+u_str  ESTAB      0      0       * 29654                 * 30426                
+u_str  ESTAB      0      0       * 28599                 * 31874                
+u_str  ESTAB      0      0       * 29669                 * 28355                
+u_str  ESTAB      0      0      @/dbus-vfs-daemon/socket-OYDGIsMJ 38265                 * 37528                
+u_str  ESTAB      0      0      @/tmp/.X11-unix/X0 36590                 * 38215                
+u_str  ESTAB      0      0       * 31494                 * 30648                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 33416                 * 32467                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 28635                 * 31500                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 29649                 * 28311                
+u_str  ESTAB      0      0       * 31592                 * 33806                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 29687                 * 28367                
+u_str  ESTAB      0      0      @/tmp/dbus-6xOxarLjWb 39422                 * 38217                
+u_str  ESTAB      0      0       * 32294                 * 34519                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 31497                 * 31496                
+u_str  ESTAB      0      0       * 28316                 * 28317                
+u_str  ESTAB      0      0       * 39397                 * 37389                
+u_str  ESTAB      0      0       * 31451                 * 31829                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 31753                 * 31401                
+u_str  ESTAB      0      0      @/tmp/.X11-unix/X0 35261                 * 34615                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 34515                 * 33268                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 36589                 * 38213                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 32202                 * 32201                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 30648                 * 31494                
+u_str  ESTAB      0      0       * 29692                 * 31383                
+u_str  ESTAB      0      0       * 28319                 * 29662                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 28318                 * 29657                
+u_str  ESTAB      0      0      @/tmp/ibus/dbus-57m8tsJC 30694                 * 31499                
+u_str  ESTAB      0      0       * 31452                 * 31830                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 23120                 * 21261                
+u_str  ESTAB      0      0       * 34617                 * 34618                
+u_str  ESTAB      0      0       * 33289                 * 34526                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 39420                 * 38212                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 32378                 * 35263                
+u_str  ESTAB      0      0       * 32295                 * 34520                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 31383                 * 29692                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 18725                 * 20073                
+u_str  ESTAB      0      0       * 28324                 * 28325                
+u_str  ESTAB      0      0       * 31418                 * 30546                
+u_str  ESTAB      0      0       * 29677                 * 29678                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 33270                 * 34518                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 31918                 * 31916                
+u_str  ESTAB      0      0       * 38212                 * 39420                
+u_str  ESTAB      0      0       * 36048                 * 32648                
+u_str  ESTAB      0      0       * 29691                 * 31382                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 30458                 * 30457                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 36046                 * 35614                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 27227                 * 25237                
+u_str  ESTAB      0      0       * 31608                 * 33826                
+u_str  ESTAB      0      0       * 35634                 * 35635                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 25339                 * 27402                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 31351                 * 29659                
+u_str  ESTAB      0      0       * 36915                 * 36916                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 35929                 * 33598                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 32121                 * 34234                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 33833                 * 31616                
+u_str  ESTAB      0      0       * 31959                 * 33828                
+u_str  ESTAB      0      0       * 29579                 * 29580                
+u_str  ESTAB      0      0       * 31311                 * 29647                
+u_str  ESTAB      0      0      @/tmp/.X11-unix/X0 29549                 * 29548                
+u_str  ESTAB      0      0       * 17138                 * 17137                
+u_str  ESTAB      0      0       * 25237                 * 27227                
+u_str  ESTAB      0      0       * 35637                 * 36907                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 31955                 * 31605                
+u_str  ESTAB      0      0       * 19302                 * 18411                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 31953                 * 31952                
+u_str  ESTAB      0      0       * 31928                 * 31929                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 28351                 * 28350                
+u_str  ESTAB      0      0       * 29548                 * 29549                
+u_str  ESTAB      0      0       * 17137                 * 17138                
+u_str  ESTAB      0      0       * 35615                 * 36047                
+u_str  ESTAB      0      0      @/dbus-vfs-daemon/socket-BONCpOpc 33844                 * 32887                
+u_str  ESTAB      0      0       * 31876                 * 28603                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 33414                 * 34707                
+u_dgr  UNCONN     0      0       * 18137                 * 14863                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 34232                 * 32115                
+u_str  ESTAB      0      0       * 35318                 * 33364                
+u_str  ESTAB      0      0       * 28636                 * 31886                
+u_dgr  UNCONN     0      0       * 17134                 * 14860                
+u_str  ESTAB      0      0       * 32887                 * 33844                
+u_str  ESTAB      0      0       * 34707                 * 33414                
+u_str  ESTAB      0      0      @/tmp/.X11-unix/X0 33826                 * 31608                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 18411                 * 19302                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 34233                 * 32116                
+u_str  ESTAB      0      0       * 31577                 * 33795                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 31873                 * 31872                
+u_str  ESTAB      0      0       * 31856                 * 28464                
+u_str  ESTAB      0      0       * 31285                 * 29581                
+u_str  ESTAB      0      0       * 35614                 * 36046                
+u_str  ESTAB      0      0       * 33589                 * 35467                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 17964                 * 18933                
+u_str  ESTAB      0      0      @/tmp/ibus/dbus-57m8tsJC 35110                 * 32144                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 33806                 * 31592                
+u_str  ESTAB      0      0       * 31776                 * 31419                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 35633                 * 35632                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 31877                 * 28602                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 20671                 * 21517                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 31886                 * 28636                
+u_str  ESTAB      0      0      @/tmp/ibus/dbus-57m8tsJC 29581                 * 31285                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 20631                 * 17296                
+u_str  ESTAB      0      0       * 17056                 * 17140                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 35626                 * 35625                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 35467                 * 33589                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 36907                 * 35637                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 32858                 * 31595                
+u_str  ESTAB      0      0       * 18143                 * 17139                
+u_str  ESTAB      0      0      @/tmp/dbus-6xOxarLjWb 33828                 * 31959                
+u_str  ESTAB      0      0       * 28602                 * 31877                
+u_str  ESTAB      0      0      @/tmp/ibus/dbus-57m8tsJC 29580                 * 29579                
+u_str  ESTAB      0      0       * 31521                 * 31887                
+u_str  ESTAB      0      0      @/tmp/.X11-unix/X0 29629                 * 31308                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 31252                 * 29517                
+u_str  ESTAB      0      0       * 17394                 * 19311                
+u_dgr  UNCONN     0      0       * 746                   * 14844                
+u_str  ESTAB      0      0      @/dbus-vfs-daemon/socket-ZLz588PI 31628                 * 33847                
+u_str  ESTAB      0      0       * 31605                 * 31955                
+u_str  ESTAB      0      0      @/com/ubuntu/upstart-session/1001/2636 30391                 * 31232                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 31914                 * 31567                
+u_str  ESTAB      0      0       * 31282                 * 31283                
+u_str  ESTAB      0      0      @/tmp/ibus/dbus-57m8tsJC 29564                 * 29563                
+u_str  ESTAB      0      0       * 35625                 * 35626                
+u_str  ESTAB      0      0       * 32893                 * 31625                
+u_str  ESTAB      0      0       * 29646                 * 29645                
+u_dgr  UNCONN     0      0       * 17392                 * 14860                
+u_str  ESTAB      0      0       * 32144                 * 35110                
+u_str  ESTAB      0      0       * 31616                 * 33833                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 18996                 * 18136                
+u_str  ESTAB      0      0      @/tmp/ibus/dbus-57m8tsJC 38221                 * 36597                
+u_str  ESTAB      0      0      @/tmp/.X11-unix/X0 28464                 * 31856                
+u_str  ESTAB      0      0       * 29645                 * 29646                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 31419                 * 31776                
+u_str  ESTAB      0      0       * 32115                 * 34232                
+u_str  ESTAB      0      0       * 31872                 * 31873                
+u_str  ESTAB      0      0       * 28350                 * 28351                
+u_str  ESTAB      0      0       * 31308                 * 29629                
+u_str  ESTAB      0      0       * 35627                 * 35628                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 32152                 * 33226                
+u_str  ESTAB      0      0       * 29640                 * 29641                
+u_str  ESTAB      0      0       * 33847                 * 31628                
+u_str  ESTAB      0      0       * 31606                 * 31956                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 33812                 * 31949                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 31283                 * 31282                
+u_str  ESTAB      0      0       * 17296                 * 20631                
+u_str  ESTAB      0      0      @/dbus-vfs-daemon/socket-7jfRF8m7 31625                 * 32893                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 29641                 * 29640                
+u_str  ESTAB      0      0       * 32175                 * 35136                
+u_str  ESTAB      0      0       * 31617                 * 33834                
+u_str  ESTAB      0      0       * 36597                 * 38221                
+u_str  ESTAB      0      0       * 32116                 * 34233                
+u_str  ESTAB      0      0      @/tmp/dbus-6xOxarLjWb 29655                 * 31320                
+u_str  ESTAB      0      0       * 35632                 * 35633                
+u_str  ESTAB      0      0      @/tmp/.X11-unix/X0 31887                 * 31521                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 26344                 * 27359                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 19311                 * 17394                
+u_str  ESTAB      0      0       * 33599                 * 0                    
+u_str  ESTAB      0      0      @/tmp/ibus/dbus-57m8tsJC 33831                 * 31612                
+u_str  ESTAB      0      0       * 31948                 * 33811                
+u_str  ESTAB      0      0       * 31320                 * 29655                
+u_str  ESTAB      0      0       * 35470                 * 35930                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 33364                 * 35318                
+u_str  ESTAB      0      0       * 29517                 * 31252                
+u_str  ESTAB      0      0      @/tmp/.X11-unix/X0 28603                 * 31876                
+u_str  ESTAB      0      0       * 18933                 * 17964                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 35136                 * 32175                
+u_str  ESTAB      0      0       * 31612                 * 33831                
+u_str  ESTAB      0      0       * 18136                 * 18996                
+u_str  ESTAB      0      0       * 31949                 * 33812                
+u_str  ESTAB      0      0      @/tmp/dbus-9urqEDoY0v 31929                 * 31928                
+u_str  ESTAB      0      0       * 29563                 * 29564                
+u_str  ESTAB      0      0       * 33226                 * 32152                
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 31938                 * 31587                
+u_str  ESTAB      0      0       * 33598                 * 35929                
+u_str  ESTAB      0      0       * 31595                 * 32858                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 33811                 * 31948                
+u_str  ESTAB      0      0       * 31757                 * 0                    
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 35930                 * 35470                
+u_str  ESTAB      0      0      @/tmp/dbus-6xOxarLjWb 29647                 * 31311                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 36047                 * 35615                
+u_str  ESTAB      0      0       * 33797                 * 31578                
+u_str  ESTAB      0      0       * 34234                 * 32121                
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 31956                 * 31606                
+u_str  ESTAB      0      0       * 31232                 * 30391                
+u_str  ESTAB      0      0       * 31952                 * 31953                
+u_str  ESTAB      0      0       * 27402                 * 25339
+
+
+$ ping localhost
+PING localhost (127.0.0.1) 56(84) bytes of data.
+64 bytes from localhost (127.0.0.1): icmp_seq=1 ttl=64 time=0.016 ms
+64 bytes from localhost (127.0.0.1): icmp_seq=2 ttl=64 time=0.042 ms
+64 bytes from localhost (127.0.0.1): icmp_seq=3 ttl=64 time=0.042 ms
+64 bytes from localhost (127.0.0.1): icmp_seq=4 ttl=64 time=0.052 ms
+^C
+--- localhost ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3079ms
+rtt min/avg/max/mdev = 0.016/0.038/0.052/0.013 ms
+
+
+
+$ arp
+Address                  HWtype  HWaddress           Flags Mask            Iface
+10.0.45.49               ether   00:e0:4f:0c:5c:05   C                     enp2s0
+10.0.4.16                ether   f4:4d:30:48:3c:40   C                     enp2s0
+10.0.4.9                 ether   f4:4d:30:48:39:af   C                     enp2s0
+10.0.4.33                ether   40:8d:5c:ac:f7:b0   C                     enp2s0
+10.0.4.19                ether   40:8d:5c:d7:d0:d8   C                     enp2s0
+10.0.4.5                 ether   f4:4d:30:48:3d:ee   C                     enp2s0
+10.10.10.47              ether   50:9a:4c:3c:1c:ff   C                     enp2s0
+10.0.4.26                ether   40:8d:5c:d7:ad:91   C                     enp2s0
+10.0.4.12                ether   f4:4d:30:48:53:b2   C                     enp2s0
+10.0.46.21               ether   ac:16:2d:0f:ed:5c   C                     enp2s0
+10.0.4.22                ether   40:8d:5c:d7:ae:25   C                     enp2s0
+10.0.4.36                ether   40:8d:5c:d7:ae:e6   C                     enp2s0
+10.0.4.8                 ether   f4:4d:30:48:3c:63   C                     enp2s0
+10.0.4.29                ether   40:8d:5c:d7:ad:ab   C                     enp2s0
+10.10.4.37               ether   0c:9d:92:63:c3:0e   C                     enp2s0
+10.0.4.18                ether   40:8d:5c:d7:ae:2c   C                     enp2s0
+10.0.4.4                 ether   f4:4d:30:48:3d:9b   C                     enp2s0
+10.10.10.46              ether   50:9a:4c:3c:21:cf   C                     enp2s0
+10.0.4.39                ether   00:0c:f1:c6:74:0e   C                     enp2s0
+10.0.4.11                ether   40:8d:5c:d7:ad:8d   C                     enp2s0
+10.0.4.35                ether   40:8d:5c:d7:ae:b6   C                     enp2s0
+10.0.4.7                 ether   f4:4d:30:48:3c:92   C                     enp2s0
+10.0.4.21                ether   40:8d:5c:d7:d1:2e   C                     enp2s0
+10.0.4.14                ether   f4:4d:30:48:3e:2f   C                     enp2s0
+10.0.4.28                ether   40:8d:5c:ac:fb:1c   C                     enp2s0
+10.0.40.35                       (incomplete)                              enp2s0
+10.0.4.17                ether   f4:4d:30:48:3f:3e   C                     enp2s0
+10.0.4.38                ether   f4:4d:30:48:3e:cb   C                     enp2s0
+10.0.4.24                ether   f4:4d:30:48:3d:e2   C                     enp2s0
+10.10.10.48              ether   50:9a:4c:3c:1d:11   C                     enp2s0
+10.0.30.52               ether   a8:a1:59:7a:23:e7   C                     enp2s0
+10.0.4.34                ether   40:8d:5c:ac:f8:ab   C                     enp2s0
+10.0.0.251               ether   98:4b:e1:10:97:25   C                     enp2s0
+10.0.4.6                 ether   f4:4d:30:48:3d:ed   C                     enp2s0
+10.0.4.20                ether   40:8d:5c:d7:ad:93   C                     enp2s0
+10.0.28.17               ether   a0:b3:cc:f9:87:65   C                     enp2s0
+
+
+$ nslookup google.com
+Server:		127.0.1.1
+Address:	127.0.1.1#53
+
+Non-authoritative answer:
+Name:	google.com
+Address: 142.250.193.174
