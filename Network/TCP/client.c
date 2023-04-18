@@ -1,3 +1,6 @@
+// Author: Gokul Raj, 235, R6A, CSE
+// TCP String Reverse: Client
+
 #include <arpa/inet.h>
 #include <sys/types.h>
 #include <sys/socket.h>

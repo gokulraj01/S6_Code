@@ -8,9 +8,10 @@
 
 #define IP_ADDR "127.0.0.1"
 #define IP_PORT 8080
-#define TIMEOUT 2
+#define TIMEOUT 10
 
 struct sockaddr_in sock, caddr;
+socklen_t addrlen;
 int sfd, left, right, packet_n, window_n, ind=0;
 
 struct Packet{
@@ -20,11 +21,16 @@ struct Packet{
 
 struct Packet **data;
 
+void err(char* msg){
+    perror(msg);
+    close(sfd);
+    exit(EXIT_FAILURE);
+}
+
 void *recieveAck(){
     int ackno;
-    socklen_t addrlen = (socklen_t) sizeof(caddr);
     while(1){
-        if(recvfrom(sfd, &ackno, sizeof(ackno), 0, (struct sockaddr*) &caddr, &addrlen) <= 0){
+        if(recvfrom(sfd, &ackno, sizeof(ackno), 0, (struct sockaddr*) &caddr, &addrlen) >= 0){
             data[ackno]->ack = 1;
             // Slide window to meet next unacknowledged packet
             while(data[left]->ack){ left++; right++; }
@@ -33,19 +39,32 @@ void *recieveAck(){
 }
 
 void transmit(int *curr){
-    if(sendto(sfd, data[*curr], sizeof(struct Packet), 0, (struct sockaddr*) &sock, (socklen_t) sizeof(sock)) <= 0){
-        perror("Send Err");
-        exit(EXIT_FAILURE);
+    int a = sendto(sfd, data[*curr], sizeof(struct Packet), 0, (struct sockaddr*) &caddr, (socklen_t) sizeof(caddr));
+    if(a <= 0){
+        printf("Error %d: ", a);
+        err("Send Err");
     }
+    
     printf("[SENT:%d] Packet %d\n", ind++, *curr);
     (*curr)++;
 }
 
 void *sendPacket(){
     int curr = left;
+    // Wait for hello..
+    int hello;
+    printf("Waiting for client...\n");
+    addrlen = (socklen_t) sizeof(caddr);
+    if(recvfrom(sfd, &hello, sizeof(hello), 0, (struct sockaddr*) &caddr, &addrlen) < sizeof(int))
+        err("No client");
+    printf("Client Connected | %s:%d\n", inet_ntoa(caddr.sin_addr), ntohs(caddr.sin_port));
+    
     while(curr < packet_n){
         // Send packet if within window
-        if(curr <= right) transmit(&curr);
+        if(curr <= right){
+            printf("L:C:R -- %d:%d:%d\n", left, curr, right);
+            transmit(&curr);
+        }
         else{
             printf("Waiting for ACK...\n");
             sleep(TIMEOUT);
@@ -84,10 +103,7 @@ void main(){
     sfd = socket(AF_INET, SOCK_DGRAM, 0);
     if(sfd == -1) perror("Socket Err");
     if(bind(sfd, (struct sockaddr *)&sock, sizeof(struct sockaddr_in)) == -1)
-        perror("Bind Err");
-    
-    // Wait for hello..
-    
+        err("Bind Err");
     
     // Start Send and Recieve Threads
     pthread_t st, rt;

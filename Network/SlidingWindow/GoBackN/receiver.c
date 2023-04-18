@@ -37,13 +37,13 @@ void main(){
     int ack = 1;
 
     // Send Hello
-    if(sendto(sfd, &ack, sizeof(int), 0, (struct sockaddr*) &sock, sizeof(sock)) > 0)
+    if(sendto(sfd, &ack, sizeof(ack), 0, (struct sockaddr*) &sock, sizeof(sock)) > 0)
         printf("Client Started!!\n");
 
     // Start recieveing
     socklen_t addrlen = (socklen_t) sizeof(sock);
     struct Packet buff;
-    if(recvfrom(sfd, &buff, sizeof(buff), 0, (struct sockaddr*) &sock, &addrlen) > 0){
+    while(recvfrom(sfd, &buff, sizeof(buff), 0, (struct sockaddr*) &sock, &addrlen) > 0){
         if(!dropCheck()){
             if(sendto(sfd, &buff.i, sizeof(buff.i), 0, (struct sockaddr*) &sock, (socklen_t) sizeof(sock)) <= 0){
                 perror("Ack Err");
