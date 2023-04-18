@@ -12,7 +12,7 @@
 #define TIMEOUT 2
 #define DROP_RATE 9
 
-struct sockaddr_in sock, caddr;
+struct sockaddr_in sock;
 
 struct Packet{
     int i;
@@ -34,12 +34,16 @@ void main(){
     inet_pton(AF_INET, IP_ADDR, &sock.sin_addr);
     int sfd = socket(AF_INET, SOCK_DGRAM, 0);
     if(sfd == -1) perror("Socket Err");
-    
+    int ack = 1;
+
+    // Send Hello
+    if(sendto(sfd, &ack, sizeof(int), 0, (struct sockaddr*) &sock, sizeof(sock)) > 0)
+        printf("Client Started!!\n");
+
     // Start recieveing
-    printf("Client Started!!\n");
-    socklen_t addrlen = (socklen_t) sizeof(caddr);
+    socklen_t addrlen = (socklen_t) sizeof(sock);
     struct Packet buff;
-    if(recvfrom(sfd, &buff, sizeof(buff), 0, (struct sockaddr*) &caddr, &addrlen) > 0){
+    if(recvfrom(sfd, &buff, sizeof(buff), 0, (struct sockaddr*) &sock, &addrlen) > 0){
         if(!dropCheck()){
             if(sendto(sfd, &buff.i, sizeof(buff.i), 0, (struct sockaddr*) &sock, (socklen_t) sizeof(sock)) <= 0){
                 perror("Ack Err");

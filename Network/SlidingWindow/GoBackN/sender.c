@@ -86,6 +86,9 @@ void main(){
     if(bind(sfd, (struct sockaddr *)&sock, sizeof(struct sockaddr_in)) == -1)
         perror("Bind Err");
     
+    // Wait for hello..
+    
+    
     // Start Send and Recieve Threads
     pthread_t st, rt;
     pthread_create(&st, NULL, sendPacket, NULL);
