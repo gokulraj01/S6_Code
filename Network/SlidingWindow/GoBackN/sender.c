@@ -5,10 +5,11 @@
 #include <arpa/inet.h>
 #include <pthread.h>
 #include <unistd.h>
+#include <time.h>
 
 #define IP_ADDR "127.0.0.1"
 #define IP_PORT 8080
-#define TIMEOUT 10
+#define TIMEOUT 1
 
 struct sockaddr_in sock, caddr;
 socklen_t addrlen;
@@ -29,7 +30,7 @@ void err(char* msg){
 
 void *recieveAck(){
     int ackno;
-    while(1){
+    while(right < packet_n){
         if(recvfrom(sfd, &ackno, sizeof(ackno), 0, (struct sockaddr*) &caddr, &addrlen) >= 0){
             data[ackno]->ack = 1;
             // Slide window to meet next unacknowledged packet
@@ -39,13 +40,10 @@ void *recieveAck(){
 }
 
 void transmit(int *curr){
-    int a = sendto(sfd, data[*curr], sizeof(struct Packet), 0, (struct sockaddr*) &caddr, (socklen_t) sizeof(caddr));
-    if(a <= 0){
-        printf("Error %d: ", a);
+    if(sendto(sfd, data[*curr], sizeof(struct Packet), 0, (struct sockaddr*) &caddr, (socklen_t) sizeof(caddr)) <= 0)
         err("Send Err");
-    }
     
-    printf("[SENT:%d] Packet %d\n", ind++, *curr);
+    printf("Progress: %d%% [SENT:%d] Packet %d\n", (*curr)*100/packet_n, ind++, *curr);
     (*curr)++;
 }
 
@@ -53,6 +51,8 @@ void *sendPacket(){
     int curr = left;
     // Wait for hello..
     int hello;
+    time_t wait_start;
+    struct Packet endPacket = {-1, 0};
     printf("Waiting for client...\n");
     addrlen = (socklen_t) sizeof(caddr);
     if(recvfrom(sfd, &hello, sizeof(hello), 0, (struct sockaddr*) &caddr, &addrlen) < sizeof(int))
@@ -61,21 +61,25 @@ void *sendPacket(){
     
     while(curr < packet_n){
         // Send packet if within window
-        if(curr <= right){
-            printf("L:C:R -- %d:%d:%d\n", left, curr, right);
-            transmit(&curr);
-        }
+        if(curr <= right) transmit(&curr);
         else{
-            printf("Waiting for ACK...\n");
-            sleep(TIMEOUT);
-            // Check if situation has changed?
-            // Else resend all packets in current window
-            if(curr > right){
-                curr = left;
-                while(curr <= right) transmit(&curr);
+            printf("Waiting %d sec for ACK...\n", TIMEOUT);
+            wait_start = time(NULL);
+            while(curr >= right){
+                if(time(NULL)-wait_start >= TIMEOUT){
+                    printf("ACK Timeout: Resending Packets %d:%d\n", left, right);
+                    curr = left;
+                    int temp_r = right;
+                    while(curr <= temp_r) transmit(&curr);
+                    break;
+                }
             }
         }
     }
+
+    // Send End Packet to close transfer
+    if(sendto(sfd, &endPacket, sizeof(struct Packet), 0, (struct sockaddr*) &caddr, (socklen_t) sizeof(caddr)) <= 0)
+        err("Transfer End Error");
 }
 
 void main(){
@@ -113,7 +117,8 @@ void main(){
     // Wait for completion
     pthread_join(st, NULL);
     pthread_join(rt, NULL);
-    
+    printf("Transfer complete!!\n");
+
     // Close all connections
     close(sfd);
 }

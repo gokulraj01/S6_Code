@@ -44,6 +44,11 @@ void main(){
     socklen_t addrlen = (socklen_t) sizeof(sock);
     struct Packet buff;
     while(recvfrom(sfd, &buff, sizeof(buff), 0, (struct sockaddr*) &sock, &addrlen) > 0){
+        if(buff.i == -1){
+            printf("Got end packet | Transfer Complete!!\n");
+            close(sfd);
+            exit(EXIT_SUCCESS);
+        }
         if(!dropCheck()){
             if(sendto(sfd, &buff.i, sizeof(buff.i), 0, (struct sockaddr*) &sock, (socklen_t) sizeof(sock)) <= 0){
                 perror("Ack Err");
