@@ -63,15 +63,18 @@ void *sendPacket(){
         // Send packet if within window
         if(curr <= right) transmit(&curr);
         else{
-            // Wait until timeout, then resend whole window
+            // Wait until timeout for ACK, else resend lost packets only
             printf("Waiting %d sec for ACK...\n", TIMEOUT);
             wait_start = time(NULL);
             while(curr >= right){
                 if(time(NULL)-wait_start >= TIMEOUT){
-                    printf("ACK Timeout: Resending Packets %d:%d\n", left, right);
-                    curr = left;
+                    printf("ACK Timeout: Resending Lost Packets\n");
                     int temp_r = right;
-                    while(curr <= temp_r) transmit(&curr);
+                    // Find and send un-ack packets from window
+                    for(int i=left; i<=temp_r;){
+                        if(data[i]->ack == 0) transmit(&i);
+                        else i++;
+                    }
                     break;
                 }
             }
