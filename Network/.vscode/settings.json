@@ -1,5 +1,11 @@
 {
     "files.associations": {
-        "inet.h": "c"
+        "inet.h": "c",
+        "types.h": "c",
+        "ftp.h": "c",
+        "*.tcc": "c",
+        "complex": "c",
+        "fstream": "c",
+        "system_error": "c"
     }
 }
