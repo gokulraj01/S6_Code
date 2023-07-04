@@ -1,3 +1,5 @@
+// Author: Gokul Raj, 235, R6A, CSE
+// FTP: Client
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
