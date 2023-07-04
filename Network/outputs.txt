@@ -1,0 +1,313 @@
+~/Stop&Wait $ ./sender
+How many packets? 20
+Waiting for client...
+Client Connected | 127.0.0.1:45741
+Progress: 0% [SENT:0] Packet 0
+Progress: 5% [SENT:1] Packet 1
+Progress: 10% [SENT:2] Packet 2
+Progress: 15% [SENT:3] Packet 3
+Progress: 20% [SENT:4] Packet 4
+Progress: 25% [SENT:5] Packet 5
+Progress: 30% [SENT:6] Packet 6
+ACK Timeout: Resending Lost Packets
+Progress: 30% [SENT:7] Packet 6
+Progress: 35% [SENT:8] Packet 7
+Progress: 40% [SENT:9] Packet 8
+Progress: 45% [SENT:10] Packet 9
+Progress: 50% [SENT:11] Packet 10
+Progress: 55% [SENT:12] Packet 11
+Progress: 60% [SENT:13] Packet 12
+Progress: 65% [SENT:14] Packet 13
+Progress: 70% [SENT:15] Packet 14
+Progress: 75% [SENT:16] Packet 15
+Progress: 80% [SENT:17] Packet 16
+Progress: 85% [SENT:18] Packet 17
+Progress: 90% [SENT:19] Packet 18
+Progress: 95% [SENT:20] Packet 19
+Transfer complete!!
+
+~/Stop&Wait $ ./receiver 
+Client Started!!
+[ACK] Packet 0
+[ACK] Packet 1
+[ACK] Packet 2
+[ACK] Packet 3
+[ACK] Packet 4
+[ACK] Packet 5
+[DROP] Packet 6
+[ACK] Packet 6
+[ACK] Packet 7
+[ACK] Packet 8
+[ACK] Packet 9
+[ACK] Packet 10
+[ACK] Packet 11
+[ACK] Packet 12
+[ACK] Packet 13
+[ACK] Packet 14
+[ACK] Packet 15
+[ACK] Packet 16
+[ACK] Packet 17
+[ACK] Packet 18
+[ACK] Packet 19
+Got end packet | Transfer Complete!!
+
+
+~/GoBackN $ ./sender
+How many packets? 20
+Window Size: 3
+Waiting for client...
+Client Connected | 127.0.0.1:41620
+Progress: 0% [SENT:0] Packet 0
+Progress: 5% [SENT:1] Packet 1
+Progress: 10% [SENT:2] Packet 2
+Waiting 1 sec for ACK...
+Progress: 15% [SENT:3] Packet 3
+Progress: 20% [SENT:4] Packet 4
+Progress: 25% [SENT:5] Packet 5
+Progress: 30% [SENT:6] Packet 6
+Progress: 35% [SENT:7] Packet 7
+Progress: 40% [SENT:8] Packet 8
+Progress: 45% [SENT:9] Packet 9
+Waiting 1 sec for ACK...
+Progress: 50% [SENT:10] Packet 10
+Progress: 55% [SENT:11] Packet 11
+Progress: 60% [SENT:12] Packet 12
+Waiting 1 sec for ACK...
+ACK Timeout: Resending Packets 10:12
+Progress: 50% [SENT:13] Packet 10
+Progress: 55% [SENT:14] Packet 11
+Progress: 60% [SENT:15] Packet 12
+Waiting 1 sec for ACK...
+Progress: 65% [SENT:16] Packet 13
+Progress: 70% [SENT:17] Packet 14
+Progress: 75% [SENT:18] Packet 15
+Waiting 1 sec for ACK...
+Progress: 80% [SENT:19] Packet 16
+Progress: 85% [SENT:20] Packet 17
+Progress: 90% [SENT:21] Packet 18
+Waiting 1 sec for ACK...
+Progress: 95% [SENT:22] Packet 19
+Transfer complete!!
+
+~/GoBackN $ ./receiver
+Client Started!!
+[ACK] Packet 0
+[ACK] Packet 1
+[ACK] Packet 2
+[ACK] Packet 3
+[ACK] Packet 4
+[ACK] Packet 5
+[ACK] Packet 6
+[ACK] Packet 7
+[ACK] Packet 8
+[ACK] Packet 9
+[DROP] Packet 10
+[ACK] Packet 11
+[ACK] Packet 12
+[ACK] Packet 10
+[ACK] Packet 11
+[ACK] Packet 12
+[ACK] Packet 13
+[ACK] Packet 14
+[ACK] Packet 15
+[ACK] Packet 16
+[ACK] Packet 17
+[ACK] Packet 18
+[ACK] Packet 19
+Got end packet | Transfer Complete!!
+
+
+~/SelectiveRepeat $ ./sender
+How many packets? 20
+Window Size: 3
+Waiting for client...
+Client Connected | 127.0.0.1:42223
+Progress: 0% [SENT:0] Packet 0
+Progress: 5% [SENT:1] Packet 1
+Progress: 10% [SENT:2] Packet 2
+Waiting 1 sec for ACK...
+ACK Timeout: Resending Lost Packets
+Progress: 5% [SENT:3] Packet 1
+Progress: 15% [SENT:4] Packet 3
+Progress: 15% [SENT:5] Packet 3
+Waiting 1 sec for ACK...
+Progress: 20% [SENT:6] Packet 4
+Progress: 25% [SENT:7] Packet 5
+Progress: 30% [SENT:8] Packet 6
+Waiting 1 sec for ACK...
+ACK Timeout: Resending Lost Packets
+Progress: 20% [SENT:9] Packet 4
+Waiting 1 sec for ACK...
+Progress: 35% [SENT:10] Packet 7
+Progress: 40% [SENT:11] Packet 8
+Progress: 45% [SENT:12] Packet 9
+Waiting 1 sec for ACK...
+Progress: 50% [SENT:13] Packet 10
+Progress: 55% [SENT:14] Packet 11
+Waiting 1 sec for ACK...
+Progress: 60% [SENT:15] Packet 12
+Progress: 65% [SENT:16] Packet 13
+Progress: 70% [SENT:17] Packet 14
+Waiting 1 sec for ACK...
+Progress: 75% [SENT:18] Packet 15
+Progress: 80% [SENT:19] Packet 16
+Waiting 1 sec for ACK...
+Progress: 85% [SENT:20] Packet 17
+Progress: 90% [SENT:21] Packet 18
+Waiting 1 sec for ACK...
+Progress: 95% [SENT:22] Packet 19
+Transfer complete!!
+
+~/SelectiveRepeat $ ./receiver 
+Client Started!!
+[ACK] Packet 0
+[DROP] Packet 1
+[ACK] Packet 2
+[ACK] Packet 1
+[ACK] Packet 3
+[ACK] Packet 3
+[DROP] Packet 4
+[ACK] Packet 5
+[ACK] Packet 6
+[ACK] Packet 4
+[ACK] Packet 7
+[ACK] Packet 8
+[ACK] Packet 9
+[ACK] Packet 10
+[ACK] Packet 11
+[ACK] Packet 12
+[ACK] Packet 13
+[ACK] Packet 14
+[ACK] Packet 15
+[ACK] Packet 16
+[ACK] Packet 17
+[ACK] Packet 18
+[ACK] Packet 19
+Got end packet | Transfer Complete!!
+
+
+~/FTP $ ./server testfile.bin 
+Waiting for connection...
+Sending chunk 0 - 2048 bytes
+Sending chunk 1 - 2048 bytes
+Sending chunk 2 - 2048 bytes
+Sending chunk 3 - 2048 bytes
+Sending chunk 4 - 2048 bytes
+Sending chunk 5 - 2048 bytes
+Sending chunk 6 - 2048 bytes
+Sending chunk 7 - 2048 bytes
+Sending chunk 8 - 2048 bytes
+Sending chunk 9 - 2048 bytes
+Sending chunk 10 - 2048 bytes
+Sending chunk 11 - 2048 bytes
+Sending chunk 12 - 2048 bytes
+Sending chunk 13 - 2048 bytes
+Sending chunk 14 - 2048 bytes
+Sending chunk 15 - 2048 bytes
+Sending chunk 16 - 2048 bytes
+Sending chunk 17 - 1024 bytes
+Sent Total: 35840bytes
+
+~/FTP $ ./client op.bin
+Connected!!
+Got chunk 0 - 2048 bytes
+Got chunk 1 - 2048 bytes
+Got chunk 2 - 2048 bytes
+Got chunk 3 - 2048 bytes
+Got chunk 4 - 2048 bytes
+Got chunk 5 - 2048 bytes
+Got chunk 6 - 2048 bytes
+Got chunk 7 - 2048 bytes
+Got chunk 8 - 2048 bytes
+Got chunk 9 - 2048 bytes
+Got chunk 10 - 2048 bytes
+Got chunk 11 - 2048 bytes
+Got chunk 12 - 2048 bytes
+Got chunk 13 - 2048 bytes
+Got chunk 14 - 2048 bytes
+Got chunk 15 - 2048 bytes
+Got chunk 16 - 2048 bytes
+Got chunk 17 - 1024 bytes
+Receieved Total: 35840bytes
+
+$ ./leakybucket 
+No: of reuqests: 20
+Request Rate [reqs/sec]: 3
+Process Rate [reqs/sec]: 4
+[REQ:0] 4 bytes added to queue
+[REQ:0] 4 bytes added to queue
+[REQ:0] 4 bytes added to queue
+[REQ:0] 4 bytes added to queue
+[SEND:0] Sending 4 bytes
+[SEND:1] Sending 4 bytes
+[REQ:2] 4 bytes added to queue
+[REQ:2] 4 bytes added to queue
+[REQ:2] 4 bytes added to queue
+[REQ:2] 4 bytes added to queue
+[SEND:2] Sending 4 bytes
+[SEND:3] Sending 4 bytes
+[REQ:4] 4 bytes added to queue
+[REQ:4] 4 bytes added to queue
+[REQ:4] 4 bytes added to queue
+[REQ:4] 4 bytes added to queue
+[SEND:4] Sending 4 bytes
+[SEND:5] Sending 4 bytes
+[REQ:6] 3 bytes added to queue
+[REQ:6] 3 bytes added to queue
+[REQ:6] 3 bytes added to queue
+[SEND:6] Sending 4 bytes
+[REQ:7] 4 bytes added to queue
+[REQ:7] 4 bytes added to queue
+[REQ:7] 4 bytes added to queue
+[REQ:7] 4 bytes added to queue
+[SEND:7] Sending 4 bytes
+[REQ:8] 2 bytes added to queue
+[REQ:8] 2 bytes added to queue
+[SEND:8] Sending 4 bytes
+[SEND:9] Sending 4 bytes
+[SEND:10] Sending 4 bytes
+[SEND:11] Sending 4 bytes
+[REQ:12] 1 bytes added to queue
+[SEND:12] Sending 3 bytes
+[REQ:13] 2 bytes added to queue
+[REQ:13] 2 bytes added to queue
+[SEND:13] Sending 3 bytes
+[SEND:14] Sending 3 bytes
+[REQ:15] 2 bytes added to queue
+[REQ:15] 2 bytes added to queue
+[SEND:15] Sending 4 bytes
+[REQ:16] 2 bytes added to queue
+[REQ:16] 2 bytes added to queue
+[SEND:16] Sending 4 bytes
+[REQ:17] 3 bytes added to queue
+[REQ:17] 3 bytes added to queue
+[REQ:17] 3 bytes added to queue
+[SEND:17] Sending 4 bytes
+[REQ:18] 2 bytes added to queue
+[REQ:18] 2 bytes added to queue
+[SEND:18] Sending 4 bytes
+[REQ:19] 1 bytes added to queue
+[SEND:19] Sending 2 bytes
+
+$ ./linkstateroute
+Number of nodes: 7
+Enter Adjacency Martix
+> 0 4 1 3 1 0 0
+> 4 0 3 0 0 0 2
+> 1 3 0 2 0 0 2
+> 3 0 2 0 1 0 1
+> 1 0 0 1 0 3 0
+> 0 0 0 0 3 0 1
+> 0 2 2 1 0 1 0
+
+Who is this node? 0
+
+Routing Table for Node 0
+Dest	Weight	Path
+Node0	0	{0}
+Node1	4	{1} --> {0}
+Node2	1	{2} --> {0}
+Node3	2	{4} --> {3} --> {0}
+Node4	1	{4} --> {0}
+Node5	4	{4} --> {5} --> {0}
+Node6	3	{2} --> {6} --> {0}

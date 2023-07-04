@@ -3,8 +3,8 @@
 #include <time.h>
 #include <pthread.h>
 
-#define QUEUE_SIZE 10
-#define MAX_DATA 1024
+#define QUEUE_SIZE 25
+#define MAX_DATA 5
 
 int req_n, req_rate, pro_rate, temp;
 double req_delay, pro_delay;
@@ -34,10 +34,12 @@ void *addRequest(){
         // Get a random delay between 0.00 and 1.99 sec
         data = rand()%MAX_DATA;
         clock_t start = clock();
-        if(push(data))
-            printf("[REQ:%d] %d bytes added to queue\n", curr, data);
-        else
-            printf("[REQ:%d] QUEUE IS FULL. Request dropped!!\n", curr);
+        for(int i=0; i<data; i++){
+            if(push(data))
+                printf("[REQ:%d] %d bytes added to queue\n", curr, data);
+            else
+                printf("[REQ:%d] QUEUE IS FULL. Request dropped!!\n", curr);
+        }
         while((clock()-start)/CLOCKS_PER_SEC <= req_delay);
         curr++;
     }
